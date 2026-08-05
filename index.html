@@ -1,17 +1,1135 @@
-<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>YøRha Offline Mockup</title><link rel="stylesheet" href="assets/css/style.css"></head><body><header class="site-header"><div class="header-inner"><a class="logo" href="index.html">YøRha<small>Atelier Cafe</small></a><button class="menu-toggle" type="button">Menu</button><nav class="nav" aria-label="Global Navigation"><a href="index.html" aria-current="page">TOP</a><a href="about.html">About</a><a href="works.html">Works</a><a href="commission.html">Commission</a><a href="flow.html">Flow</a><a href="terms.html">Terms</a><a href="contact.html">Contact</a></nav></div></header><main>
-<section class="hero hero-bg">
-  <div class="hero-content">
-    <div class="eyebrow">White Atelier Cafe</div>
-    <h1>YøRha</h1>
-    <p class="hero-copy">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキ。</p>
-    <div class="actions">
-      <a class="button" href="works.html">Works</a>
-      <a class="button secondary" href="commission.html">Commission</a>
-    </div>
-  </div>
-</section>
+<!DOCTYPE html>
 
-<section class="section"><div class="section-head"><div><div class="kicker">Gallery</div><h2 class="section-title">Works Preview</h2></div><p class="section-lead">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト。</p></div><div class="card-grid"><article class="card"><img src="assets/img/work-01.svg" alt="Standing Illustration 仮画像"><div class="card-body"><h3>Standing Illustration</h3><p>テキストテキストテキストテキストテキストテキストテキストテキストテキ。</p><div class="tag-list"><span class="tag">立ち絵</span><span class="tag">Sample</span></div></div></article><article class="card"><img src="assets/img/work-02.svg" alt="Live2D Model 仮画像"><div class="card-body"><h3>Live2D Model</h3><p>テキストテキストテキストテキストテキストテキストテキストテキストテキ。</p><div class="tag-list"><span class="tag">Live2D</span><span class="tag">Sample</span></div></div></article><article class="card"><img src="assets/img/work-03.svg" alt="Portrait 仮画像"><div class="card-body"><h3>Portrait</h3><p>テキストテキストテキストテキストテキストテキストテキストテキストテキ。</p><div class="tag-list"><span class="tag">一枚絵</span><span class="tag">Sample</span></div></div></article></div><div class="actions"><a class="button secondary" href="works.html">View Works</a></div></section>
-<section class="section"><div class="section-head"><div><div class="kicker">Menu</div><h2 class="section-title">Commission</h2></div><p class="section-lead">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト。</p></div><div class="card-grid"><article class="card"><div class="card-body"><h3>Standing Illustration</h3><p>テキストテキストテキストテキストテキストテキストテキストテキストテキ。</p><div class="price">¥100,000〜</div></div></article><article class="card"><div class="card-body"><h3>Live2D Model</h3><p>テキストテキストテキストテキストテキストテキストテキストテキストテキ。</p><div class="price">¥150,000〜</div></div></article><article class="card"><div class="card-body"><h3>SD Character</h3><p>テキストテキストテキストテキストテキストテキストテキストテキストテキ。</p><div class="price">¥5,000〜</div></div></article></div><div class="actions"><a class="button secondary" href="commission.html">View Menu</a></div></section>
-<section class="section"><div class="section-head"><div><div class="kicker">Guide</div><h2 class="section-title">Flow / Terms / Contact</h2></div><p class="section-lead">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト。</p></div><div class="card-grid"><article class="card"><div class="card-body"><h3>Flow</h3><p>テキストテキストテキストテキストテキストテキストテキストテキストテキ。</p><a class="button secondary" href="flow.html">View Flow</a></div></article><article class="card"><div class="card-body"><h3>Terms</h3><p>テキストテキストテキストテキストテキストテキストテキストテキストテキ。</p><a class="button secondary" href="terms.html">View Terms</a></div></article><article class="card"><div class="card-body"><h3>Contact</h3><p>テキストテキストテキストテキストテキストテキストテキストテキストテキ。</p><a class="button secondary" href="contact.html">Contact</a></div></article></div></section>
-</main><footer class="footer"><div class="footer-inner"><div>YøRha Offline Mockup</div><div>© <span class="year"></span> YøRha</div></div></footer><script src="assets/js/main.js"></script></body></html>
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="YøRha — Male Character Artist / Live2D Creator" name="description"/>
+<meta content="#111111" name="theme-color"/>
+<title>YøRha Archive</title>
+<style>
+:root{
+  --black:#111;
+  --black2:#171717;
+  --paper:#e9e4dc;
+  --paper2:#ddd6ca;
+  --ink:#171717;
+  --white:#eee8dd;
+  --line-dark:rgba(255,255,255,.16);
+  --line-light:rgba(20,20,20,.23);
+  --accent:#b8aa8e;
+  --header:68px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--black);color:var(--ink);font-family:"Helvetica Neue","Yu Gothic","YuGothic",Meiryo,sans-serif;letter-spacing:.02em}
+body.no-scroll{overflow:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+img{max-width:100%}
+
+.noise{
+  position:fixed;inset:0;z-index:100;pointer-events:none;opacity:.14;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E")
+}
+.scanline{
+  position:fixed;inset:0;z-index:99;pointer-events:none;opacity:.05;
+  background:repeating-linear-gradient(0deg,transparent 0 3px,#000 4px)
+}
+
+/* loading */
+.loader{
+  position:fixed;inset:0;z-index:200;background:#111;color:#e8e1d5;
+  display:grid;place-items:center;transition:opacity .65s,visibility .65s
+}
+.loader.hide{opacity:0;visibility:hidden}
+.loader-inner{width:min(560px,82vw)}
+.loader-logo{font:400 clamp(40px,7vw,76px) Georgia,serif;letter-spacing:.12em;margin-bottom:25px}
+.loader-status{display:flex;justify-content:space-between;font-size:9px;letter-spacing:.18em;color:#aaa294;margin-bottom:10px}
+.loader-bar{height:1px;background:#3c3934;overflow:hidden}
+.loader-bar span{display:block;width:0;height:100%;background:#d0c4ae;animation:load 1.4s cubic-bezier(.2,.8,.2,1) forwards}
+@keyframes load{to{width:100%}}
+
+/* header */
+header{
+  height:var(--header);position:fixed;z-index:80;inset:0 0 auto;
+  background:rgba(17,17,17,.96);backdrop-filter:blur(8px);
+  color:var(--white);border-bottom:1px solid var(--line-dark);
+  display:flex;align-items:center;padding:0 27px
+}
+.logo{font:23px Georgia,serif;letter-spacing:.08em;white-space:nowrap}
+.logo:before{content:"✦";font-size:11px;margin-right:10px;color:var(--accent)}
+nav{margin-left:auto;display:flex;gap:26px;font-size:9px;letter-spacing:.14em}
+nav a{opacity:.72;position:relative;padding:9px 0}
+nav a:after{content:"";position:absolute;left:0;right:100%;bottom:2px;height:1px;background:var(--accent);transition:.25s}
+nav a:hover{opacity:1}
+nav a:hover:after{right:0}
+.menu-button{display:none;margin-left:auto;border:0;background:none;color:#eee8dd;font-size:22px;cursor:pointer}
+
+.mobile-nav{
+  position:fixed;z-index:79;inset:var(--header) 0 0;background:#121212;color:#eee8dd;
+  padding:40px 28px;display:flex;flex-direction:column;gap:0;
+  opacity:0;visibility:hidden;transform:translateY(-10px);transition:.3s
+}
+.mobile-nav.open{opacity:1;visibility:visible;transform:none}
+.mobile-nav a{padding:18px 0;border-bottom:1px solid var(--line-dark);font:20px Georgia,serif}
+
+/* general */
+.page{min-height:100vh;padding-top:var(--header);position:relative;overflow:hidden}
+.page:after{content:"YRH-001";position:absolute;right:20px;bottom:14px;font-size:9px;letter-spacing:.15em;opacity:.62}
+.dark{background:#151515;color:#e9e2d6}
+.paper{
+  background:
+  repeating-linear-gradient(0deg,transparent 0 31px,rgba(0,0,0,.018) 32px),
+  linear-gradient(90deg,rgba(255,255,255,.2),transparent 18%,transparent 82%,rgba(0,0,0,.035)),
+  var(--paper)
+}
+.page-grid:before{
+  content:"";position:absolute;inset:0;pointer-events:none;opacity:.36;
+  background-image:
+  linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
+  background-size:320px 320px
+}
+.paper.page-grid:before{
+  background-image:
+  linear-gradient(rgba(0,0,0,.024) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(0,0,0,.024) 1px,transparent 1px)
+}
+.wrap{width:min(1440px,94vw);margin:auto;padding:50px 0 42px;position:relative;z-index:2}
+.section-head{display:flex;align-items:end;gap:24px;padding-bottom:18px;border-bottom:1px solid currentColor}
+.section-head h2{font:400 clamp(31px,4vw,42px) Georgia,serif;margin:0;letter-spacing:.025em}
+.section-head span{font-size:10px;opacity:.64;padding-bottom:6px}
+.section-code{margin-left:auto;font-size:9px;letter-spacing:.16em;opacity:.45;padding-bottom:6px}
+
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .75s ease,transform .75s ease}
+.reveal.visible{opacity:1;transform:none}
+
+/* hero */
+.hero{display:grid;grid-template-columns:minmax(0,1.23fr) minmax(320px,.77fr);min-height:calc(100vh - var(--header))}
+.hero-main{
+  min-height:760px;position:relative;border-right:1px solid var(--line-dark);
+  background:#111 url("assets/top.png") center 17%/cover no-repeat
+}
+.hero-main:before{
+  content:"";position:absolute;inset:0;
+  background:
+  linear-gradient(90deg,rgba(8,8,8,.84) 0,rgba(8,8,8,.34) 40%,rgba(8,8,8,.03) 72%),
+  linear-gradient(0deg,rgba(8,8,8,.82),transparent 47%)
+}
+.hero-copy{position:absolute;z-index:2;left:7%;bottom:17%;color:#eee8dc;max-width:680px}
+.hero-copy .index{font:20px Georgia,serif;letter-spacing:.12em;margin-bottom:35px}
+.hero-copy h1{font:400 clamp(62px,8vw,122px) Georgia,serif;letter-spacing:.09em;margin:0 0 14px}
+.hero-copy .role{font-size:13px;letter-spacing:.15em;line-height:1.9}
+.hero-copy .statement{font:400 clamp(16px,1.8vw,23px) Georgia,serif;line-height:1.55;margin-top:28px;letter-spacing:.05em}
+.hero-edge{position:absolute;z-index:2;left:18px;top:16%;writing-mode:vertical-rl;color:#aaa08e;font-size:9px;letter-spacing:.18em}
+.hero-status{position:absolute;z-index:2;inset:auto 24px 17px;color:#a79e8f;font-size:9px;letter-spacing:.14em;display:flex;gap:32px}
+.hero-side{display:grid;grid-template-rows:1fr 285px;background:#151515}
+.hero-system{display:flex;align-items:center;justify-content:center;color:#817a6d;font-size:9px;letter-spacing:.25em;writing-mode:vertical-rl}
+.hero-cards{display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid var(--line-dark)}
+.hero-cards a{
+  min-height:142px;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  border-right:1px solid var(--line-dark);border-bottom:1px solid var(--line-dark);
+  gap:15px;font-size:9px;letter-spacing:.13em;text-align:center;transition:.25s
+}
+.hero-cards a:hover{background:#24221f}
+.hero-cards small{font-size:9px;opacity:.54}
+.sigil{font-size:24px;color:#b9aa90}
+
+/* profile */
+.profile-grid{display:grid;grid-template-columns:minmax(0,1.16fr) minmax(320px,.72fr);gap:65px;margin-top:54px}
+.profile-copy h3{font:400 35px Georgia,serif;margin:0 0 8px}
+.kicker{font-size:10px;letter-spacing:.14em;margin-bottom:29px}
+.profile-copy p{font-size:13px;line-height:2.1;margin:0 0 20px}
+.profile-img{padding:9px;background:#1d1d1d;border:1px solid var(--line-light);position:relative}
+.profile-img:after{content:"CREATOR RECORD / YRH-001";position:absolute;left:18px;bottom:17px;color:#ddd4c4;font-size:9px;letter-spacing:.14em}
+.profile-img img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover}
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);margin-top:41px;border-block:1px solid var(--line-light)}
+.metric{text-align:center;padding:23px 8px;border-right:1px solid var(--line-light)}
+.metric:last-child{border-right:0}
+.metric strong{display:block;font:400 33px Georgia,serif}
+.metric span{font-size:9px;letter-spacing:.13em}
+.philosophy-title{font:400 28px Georgia,serif;margin:38px 0 14px}
+.quote{border:1px solid var(--line-light);padding:25px;text-align:center;font:17px Georgia,serif;position:relative}
+.quote:before,.quote:after{content:"+";position:absolute;font-size:13px;color:#777065}
+.quote:before{left:-7px;top:-10px}.quote:after{right:-7px;bottom:-10px}
+
+/* works */
+.works-layout{display:grid;grid-template-columns:205px 1fr;gap:23px;margin-top:31px}
+.filters{border:1px solid var(--line-dark);height:max-content}
+.filters button{
+  width:100%;padding:17px 15px;text-align:left;border:0;border-bottom:1px solid rgba(255,255,255,.13);
+  background:none;color:#eee8dc;font-size:9px;letter-spacing:.11em;cursor:pointer;transition:.2s
+}
+.filters button.active,.filters button:hover{background:#2b2925}
+.work-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.work-card{
+  position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.16);
+  aspect-ratio:3/4;background:#242424;cursor:pointer
+}
+.work-card.featured{grid-column:span 2;grid-row:span 2}
+.work-card img,.work-card video{width:100%;height:100%;object-fit:cover;display:block;transition:transform .45s,filter .45s}
+.work-card:hover img{transform:scale(1.035);filter:contrast(1.05)}
+.work-meta{position:absolute;inset:auto 0 0;padding:48px 13px 13px;background:linear-gradient(transparent,rgba(0,0,0,.94))}
+.work-meta b{font-size:9px;letter-spacing:.13em}
+.work-meta small{display:block;font-size:9px;opacity:.68;margin-top:5px}
+.work-number{position:absolute;right:8px;top:8px;background:rgba(0,0,0,.55);padding:5px 7px;font:11px Georgia,serif}
+.load-more{display:block;width:100%;margin-top:23px;border:0;border-top:1px solid var(--line-dark);padding:15px 0 0;background:transparent;text-align:center;font:inherit;font-size:9px;letter-spacing:.18em;color:#9e9585;cursor:pointer}
+.load-more[hidden]{display:none}
+
+/* modal */
+.modal{
+  position:fixed;inset:0;z-index:150;background:rgba(6,6,6,.92);display:grid;place-items:center;
+  opacity:0;visibility:hidden;transition:.3s;padding:35px
+}
+.modal.open{opacity:1;visibility:visible}
+.modal-content{max-width:min(900px,90vw);max-height:88vh;position:relative}
+.modal img,.modal video{display:block;max-height:82vh;max-width:100%;object-fit:contain;border:1px solid #575147}
+.modal-close{position:absolute;right:-2px;top:-42px;border:0;background:none;color:#eee8dd;font-size:28px;cursor:pointer}
+.modal-caption{color:#c8bdab;font-size:9px;letter-spacing:.15em;margin-top:10px}
+
+/* services */
+.service-table{margin-top:37px;border:1px solid var(--line-light)}
+.service-row{
+  display:grid;grid-template-columns:58px 1.08fr 1.42fr .72fr .72fr;
+  min-height:94px;align-items:center;border-bottom:1px solid var(--line-light);font-size:12px
+}
+.service-row:last-child{border-bottom:0}
+.service-row>div{padding:13px}
+.service-row.head{min-height:50px;font-size:10px;color:#70695f;letter-spacing:.08em}
+.icon{text-align:center;font-size:22px}
+.view{text-align:center;font-size:10px}
+.note{font-size:10px;text-align:right;margin-top:14px;color:#6c665d}
+
+.quote-policy{
+  margin-top:37px;
+  border:1px solid var(--line-light);
+  display:grid;
+  grid-template-columns:minmax(220px,.72fr) minmax(0,1.28fr);
+}
+.quote-policy-title{
+  padding:31px 28px;
+  border-right:1px solid var(--line-light);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.quote-policy-title .policy-code{
+  font-size:10px;
+  letter-spacing:.14em;
+  color:#70695f;
+  margin-bottom:10px;
+}
+.quote-policy-title strong{
+  font:400 26px Georgia,serif;
+  letter-spacing:.04em;
+}
+.quote-policy-body{
+  padding:29px 32px;
+  font-size:13px;
+  line-height:1.9;
+}
+.quote-policy-body p{margin:0}
+.quote-policy-body p+p{margin-top:12px}
+.quote-policy-factors{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:19px;
+}
+.quote-policy-factors span{
+  border:1px solid var(--line-light);
+  padding:8px 11px;
+  font-size:11px;
+  letter-spacing:.05em;
+}
+@media(max-width:680px){
+  .quote-policy{grid-template-columns:1fr}
+  .quote-policy-title{border-right:0;border-bottom:1px solid var(--line-light)}
+  .quote-policy-title,.quote-policy-body{padding:24px 21px}
+}
+
+
+.available-production{margin-top:29px;padding:18px 22px;line-height:1.85}
+.production-line{display:flex;flex-wrap:wrap;gap:0;align-items:baseline}
+.production-label{flex:0 0 100%;display:block;margin:0 0 4px 0}
+.production-line+.production-line{margin-top:10px}
+.production-label{font-weight:700;white-space:nowrap}
+.production-item{white-space:nowrap}
+.production-item:not(:last-child)::after{content:"｜";margin:0 .48em;color:#8b847a}
+
+/* commission */
+.flow{display:grid;grid-template-columns:repeat(4,1fr);margin-top:44px;border-top:1px solid var(--line-light);border-left:1px solid var(--line-light)}
+.step{min-height:118px;border:0;border-right:1px solid var(--line-light);border-bottom:1px solid var(--line-light);padding:18px 21px;position:relative}
+.step:not(:nth-child(4)):not(:nth-child(7)):after{content:"→";position:absolute;right:-7px;top:50%;z-index:2;background:var(--paper);padding:2px;font-size:11px}
+.step .n{font:27px Georgia,serif}
+.step b{display:block;margin-top:17px;font-size:9px;letter-spacing:.13em}
+.step small{font-size:9px}
+.important{margin-top:29px;border:1px solid var(--line-light);padding:22px 27px;font-size:10px;line-height:2}
+.cta{text-align:center;margin-top:31px}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;min-width:320px;padding:17px 28px;
+  background:#171717;color:#eee8dd;font-size:10px;letter-spacing:.13em;border:1px solid #171717;transition:.25s
+}
+.btn:hover{background:#34312d}
+
+/* terms */
+.terms-layout{display:grid;grid-template-columns:210px 1fr;border:1px solid var(--line-dark);margin-top:33px;min-height:550px}
+.terms-nav{border-right:1px solid var(--line-dark)}
+.terms-nav button{
+  display:block;width:100%;text-align:left;border:0;border-bottom:1px solid rgba(255,255,255,.12);
+  background:none;color:#e8e0d5;padding:17px;font-size:9px;cursor:pointer
+}
+.terms-nav button.active,.terms-nav button:hover{background:#292723}
+.terms-group-label{padding:12px 17px 9px;color:#8f877b;font-size:9px;letter-spacing:.14em;border-bottom:1px solid rgba(255,255,255,.12);background:#161513}
+.terms-body{padding:38px 48px}
+.term-panel{display:none}.term-panel.active{display:block}
+.terms-body h3{font:400 23px Georgia,serif;margin:0 0 12px}
+.terms-body p{font-size:11px;line-height:2;margin:0 0 27px;color:#d2cabd}
+.terms-body ul{margin:0 0 25px;padding:0;list-style:none;color:#d2cabd}
+.terms-body li{font-size:11px;line-height:1.95;margin:0 0 8px;padding-left:1.4em;text-indent:-1.4em}
+.terms-body li::before{content:"✦ ";}
+.terms-body .term-note{font-size:10px;color:#bcb2a4;margin-top:18px}
+.terms-body .enacted{margin-top:34px;font-size:10px;letter-spacing:.08em;color:#bcb2a4}
+
+/* contact */
+.contact-center{min-height:calc(100vh - 170px);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
+.contact-center .mark{font-size:47px}
+.contact-center h2{font:400 34px Georgia,serif;margin:24px 0 4px}
+.contact-center h3{font:400 21px Georgia,serif;margin:0 0 23px}
+.contact-center p{font-size:11px;margin-bottom:27px}
+.url{font:15px Georgia,serif;margin-top:21px}
+.contact-frame{width:min(760px,90vw);padding:62px 40px;border:1px solid var(--line-light);position:relative}
+.contact-frame:before,.contact-frame:after{content:"+";position:absolute;font-size:15px;color:#797267}
+.contact-frame:before{left:-8px;top:-12px}.contact-frame:after{right:-8px;bottom:-12px}
+
+footer{background:#101010;color:#aaa;padding:17px 29px;display:flex;justify-content:space-between;font-size:9px;letter-spacing:.14em}
+
+/* responsive */
+@media(max-width:1020px){
+  nav{display:none}.header-lang{display:none}.menu-button{display:block}
+  .hero{grid-template-columns:1fr}.hero-main{border-right:0;min-height:78vh}
+  .hero-side{grid-template-rows:auto 260px}.hero-system{display:none}
+  .profile-grid{grid-template-columns:1fr}.profile-img{max-width:520px}
+  .works-layout{grid-template-columns:1fr}.filters{display:flex;overflow:auto}.filters button{min-width:max-content}
+  .work-grid{grid-template-columns:repeat(3,1fr)}
+  .service-row{grid-template-columns:48px 1fr .8fr}.service-row>div:nth-child(3),.service-row>div:nth-child(5){display:none}
+  .terms-layout{grid-template-columns:1fr}.terms-nav{display:flex;overflow:auto;border-right:0;border-bottom:1px solid var(--line-dark)}.terms-nav button{min-width:max-content}.terms-group-label{display:none}
+}
+@media(max-width:680px){
+  :root{--header:62px}
+  header{padding:0 18px}.logo{font-size:20px}
+  .wrap{width:90vw;padding-top:37px}
+  .section-code{display:none}
+  .hero-main{min-height:72vh;background-position:56% top}
+  .hero-copy{left:7%;right:6%;bottom:12%}.hero-copy .index{margin-bottom:20px}.hero-copy h1{font-size:54px}
+  .hero-copy .role{font-size:10px}.hero-copy .statement{font-size:15px}
+  .hero-status{display:none}.hero-cards{grid-template-columns:1fr 1fr}.hero-cards a{min-height:125px}
+  .metrics{grid-template-columns:repeat(2,1fr)}.metric:nth-child(2){border-right:0}
+  .work-grid{grid-template-columns:1fr 1fr}.work-card.featured{grid-column:span 2}
+  .flow{grid-template-columns:1fr 1fr}.step:after{display:none}
+  .btn{width:100%;min-width:0}
+  .terms-body{padding:30px 22px}
+  .contact-frame{padding:48px 22px}
+  footer{gap:20px;flex-direction:column}
+}
+
+/* Site-wide minimum text size */
+small,
+.section-code,
+.page::after,
+.hero-edge,
+.hero-status,
+.hero-cards small,
+.metric span,
+.filters button,
+.work-meta b,
+.work-meta small,
+.load-more,
+.service-row.head,
+.view,
+.note,
+.step small,
+.terms-nav button,
+footer {
+  font-size: 10px;
+}
+
+
+/* SERVICES readability correction */
+.service-row:not(.head) {
+  font-size: 12px;
+}
+.service-row.head,
+.service-row .view {
+  font-size: 10px;
+}
+
+
+/* =========================================================
+   GLOBAL READABILITY PASS / 260718_1438
+   Visual legibility takes priority over the former microtype.
+   ========================================================= */
+
+/* 10px is reserved for auxiliary system metadata only. */
+.loader-status,
+.page::after,
+.section-code,
+.hero-edge,
+.hero-status,
+.hero-system,
+.profile-img::after,
+.modal-caption,
+footer {
+  font-size: 10px;
+}
+
+/* Navigation and compact controls */
+nav,
+.section-head span,
+.kicker,
+.filters button,
+.work-meta b,
+.work-meta small,
+.load-more,
+.service-row.head,
+.service-row .view,
+.note,
+.terms-nav button {
+  font-size: 11px;
+}
+
+/* Primary labels and buttons */
+.hero-cards a,
+.hero-cards small,
+.metric span,
+.step b,
+.btn {
+  font-size: 12px;
+}
+
+/* General reading text */
+.profile-copy p,
+.service-row:not(.head),
+.step small,
+.important,
+.terms-body p,
+.contact-center p {
+  font-size: 13px;
+}
+
+/* Slightly stronger Japanese body legibility */
+.profile-copy p,
+.step small,
+.important,
+.terms-body p,
+.contact-center p,
+.service-row:not(.head) {
+  line-height: 1.9;
+  font-weight: 400;
+}
+
+/* Header and navigation spacing after enlargement */
+nav {
+  gap: 24px;
+  letter-spacing: .11em;
+}
+.section-head span {
+  padding-bottom: 5px;
+}
+.section-code {
+  letter-spacing: .13em;
+}
+
+/* Hero */
+.hero-copy .role {
+  font-size: 14px;
+  line-height: 1.9;
+}
+.hero-cards a {
+  line-height: 1.55;
+}
+.hero-cards small {
+  opacity: .68;
+}
+
+/* Profile */
+.kicker {
+  line-height: 1.7;
+}
+.profile-copy p {
+  margin-bottom: 22px;
+}
+.metric {
+  padding: 27px 10px;
+}
+.metric span {
+  line-height: 1.45;
+}
+
+/* Works */
+.filters button {
+  padding: 18px 16px;
+  line-height: 1.45;
+}
+.work-meta {
+  padding: 55px 14px 15px;
+}
+.work-meta b {
+  line-height: 1.4;
+}
+.work-meta small {
+  line-height: 1.45;
+  margin-top: 6px;
+}
+
+/* Services */
+.service-row {
+  min-height: 98px;
+}
+.service-row.head {
+  min-height: 54px;
+}
+.service-row > div {
+  padding: 15px;
+}
+.service-row:not(.head) {
+  font-size: 13px;
+}
+.service-row.head,
+.service-row .view {
+  font-size: 11px;
+}
+
+/* Commission */
+.step {
+  min-height: 132px;
+  padding: 21px 22px;
+}
+.step b {
+  margin-top: 20px;
+  line-height: 1.45;
+}
+.step small {
+  display: block;
+  margin-top: 4px;
+}
+.important {
+  padding: 25px 29px;
+}
+.btn {
+  padding: 19px 30px;
+  min-width: 340px;
+  line-height: 1.45;
+}
+
+/* Terms */
+.terms-nav button {
+  padding: 19px 18px;
+  line-height: 1.45;
+}
+.terms-body {
+  padding: 42px 52px;
+}
+.terms-body p {
+  margin-bottom: 30px;
+}
+
+/* Contact */
+.contact-center p {
+  margin-bottom: 30px;
+}
+
+/* Mobile: keep the same visual hierarchy without reverting to tiny type */
+@media(max-width:680px) {
+  .hero-copy .role {
+    font-size: 12px;
+  }
+  .hero-cards a,
+  .hero-cards small,
+  .metric span,
+  .step b,
+  .btn {
+    font-size: 11px;
+  }
+  .profile-copy p,
+  .service-row:not(.head),
+  .step small,
+  .important,
+  .terms-body p,
+  .contact-center p {
+    font-size: 12px;
+  }
+  .filters button,
+  .service-row.head,
+  .service-row .view,
+  .terms-nav button {
+    font-size: 10px;
+  }
+  .step {
+    min-height: 126px;
+  }
+  .btn {
+    min-width: 0;
+  }
+}
+
+
+/* Language switch + WORKS thumbnail controls */
+.lang-switch{display:flex;gap:0;border:1px solid currentColor;margin-left:14px}
+.header-lang{margin-left:20px;flex:0 0 auto}
+.lang-switch button{border:0;background:transparent;color:inherit;padding:5px 9px;font:inherit;letter-spacing:.12em;cursor:pointer}
+.lang-switch button.active{background:currentColor;color:var(--paper,#eee9df)}
+[data-lang-block="en"]{display:none}
+body.lang-en [data-lang-block="ja"]{display:none!important}
+body.lang-en [data-lang-block="en"]{display:block}
+body.lang-en .terms-layout[data-lang-block="en"]{display:grid}
+body.lang-en span[data-lang-block="en"],body.lang-en b[data-lang-block="en"],body.lang-en small[data-lang-block="en"]{display:inline}
+.work-card img,.work-card video{object-fit:cover;object-position:center center}
+.work-card.pos-top img{object-position:center top}
+.work-card.pos-bottom img{object-position:center bottom}
+.work-card.pos-left img{object-position:left center}
+.work-card.pos-right img{object-position:right center}
+@media(max-width:760px){.lang-switch{margin-left:8px}.lang-switch button{padding:4px 7px}}
+</style>
+</head>
+<body class="no-scroll">
+<div class="loader" id="loader">
+<div class="loader-inner">
+<div class="loader-logo">YøRha</div>
+<div class="loader-status"><span>INITIALIZING ARCHIVE</span><span>YRH-001</span></div>
+<div class="loader-bar"><span></span></div>
+</div>
+</div>
+<div class="noise"></div><div class="scanline"></div>
+<header>
+<a class="logo" href="#top">YøRha</a>
+<nav>
+<a href="#top">TOP</a><a href="#profile">PROFILE</a><a href="#works">WORKS</a>
+<a href="#services">SERVICES</a><a href="#commission">COMMISSION</a>
+<a href="#terms">TERMS</a><a href="#contact">CONTACT</a>
+</nav>
+<div aria-label="Language" class="lang-switch header-lang"><button class="active" data-lang-switch="ja" type="button">JP</button><button data-lang-switch="en" type="button">EN</button></div>
+<button aria-label="メニューを開く" class="menu-button" id="menuButton">☰</button>
+</header>
+<div class="mobile-nav" id="mobileNav">
+<a href="#top">TOP</a><a href="#profile">PROFILE</a><a href="#works">WORKS</a>
+<a href="#services">SERVICES</a><a href="#commission">COMMISSION</a>
+<a href="#terms">TERMS</a><a href="#contact">CONTACT</a>
+<div aria-label="Language" class="lang-switch"><button class="active" data-lang-switch="ja" type="button">JP</button><button data-lang-switch="en" type="button">EN</button></div></div>
+<section class="page dark page-grid" id="top">
+<div class="hero">
+<div class="hero-main">
+<div class="hero-edge">CREATOR ARCHIVE / VISUAL CONSTRUCTION</div>
+<div class="hero-copy">
+<div class="index">001</div>
+<h1>YøRha</h1>
+<div class="role">MALE CHARACTER ARTIST / LIVE2D CREATOR</div>
+<div class="statement">DESIGNING PRESENCE,<br/>NOT JUST APPEARANCE.</div>
+</div>
+<div class="hero-status">
+<span>ARCHIVE ID : YRH-001</span><span>STATUS : ONLINE</span><span>SYSTEM : CHARACTER VISUAL CONSTRUCTION</span>
+</div>
+</div>
+<div class="hero-side">
+<div class="hero-system">ARCHIVE SYSTEM / CONNECTION ACTIVE / BUILD 1.5</div>
+<div class="hero-cards">
+<a href="#works">CHARACTER DESIGN <span class="sigil">✦</span><small>VIEW MORE →</small></a>
+<a href="#works">ILLUSTRATION <span class="sigil">◇</span><small>VIEW MORE →</small></a>
+<a href="#works">LIVE2D MODEL <span class="sigil">⌘</span><small>VIEW MORE →</small></a>
+<a href="#services">RIGGING <span class="sigil">⊗</span><small>VIEW MORE →</small></a>
+</div>
+</div>
+</div>
+</section>
+<section class="page paper page-grid" id="profile">
+<div class="wrap reveal">
+<div class="section-head"><h2>PROFILE</h2><span data-lang-block="ja">プロフィール</span><span data-lang-block="en">PROFILE</span><div class="section-code">CREATOR RECORD / YRH-001</div></div>
+<div class="profile-grid">
+<div class="profile-copy">
+<h3>YøRha</h3>
+<div class="kicker">ILLUSTRATOR / LIVE2D CREATOR</div>
+<div data-lang-block="ja">
+<p>✦現在、制作内容・条件に応じてご相談を受け付けています。</p>
+<p><b>✦特徴</b><br/>・男性特化型イラストレーター</p>
+<p><b>✦実績</b><br/>・イラスト商業案件実績あり<br/>・VTuber制作は100体近く</p>
+</div>
+<div data-lang-block="en">
+<p>✦Currently accepting inquiries depending on project scope and conditions.</p>
+<p><b>✦Specialty</b><br/>• Illustrator specializing in male characters</p>
+<p><b>✦Experience</b><br/>• Professional commercial illustration experience<br/>• Nearly 100 VTuber productions</p>
+</div>
+<div class="metrics">
+<div class="metric"><strong>♂</strong><span>MALE SPECIALIST</span></div>
+<div class="metric"><strong>100+</strong><span>WORKS</span></div>
+<div class="metric"><strong>~100</strong><span>VTUBER</span></div>
+<div class="metric"><strong>∞</strong><span>LONG-TERM SUPPORT</span></div>
+</div>
+<div class="philosophy-title">PHILOSOPHY</div>
+<div class="quote" data-lang-block="ja">“「この絵でなければ」と思っていただける方とのご縁を大切にしています。”</div>
+<div class="quote" data-lang-block="en">“I value connections with people who feel that only this artwork will do.”</div>
+<p data-lang-block="ja">単に見た目を整えるのではなく、“埋もれない個性”と“長く使われる強さ”を両立し、活動の顔として長く愛される存在になるよう設計します。</p>
+<p data-lang-block="en">Rather than simply refining appearance, I design visuals that combine unmistakable individuality with lasting strength—built to become the face of your activity and remain loved over time.</p>
+</div>
+<div class="profile-img"><img alt="YøRhaプロフィール用ダミーイラスト" src="assets/profile.png"/></div>
+</div>
+</div>
+</section>
+<section class="page dark page-grid" id="works">
+<div class="wrap reveal">
+<div class="section-head"><h2>WORKS</h2><span data-lang-block="ja">制作実績</span><span data-lang-block="en">PORTFOLIO</span><div class="section-code">ARCHIVE ID : YRH-001</div></div>
+<div class="works-layout">
+<div class="filters">
+<button class="active" data-filter="all">ALL</button>
+<button data-filter="design">CHARACTER DESIGN</button>
+<button data-filter="live2d">VTUBER / LIVE2D</button>
+<button data-filter="illust">ILLUSTRATION</button>
+<button data-filter="visual">KEY VISUAL</button>
+<button data-filter="sd">SD CHARACTER</button>
+</div>
+<div>
+<div class="work-grid" id="workGrid"></div>
+<button class="load-more" id="loadMoreWorks" type="button">＋　LOAD MORE ARCHIVE　＋</button>
+</div>
+</div>
+</div>
+</section>
+<section class="page paper page-grid" id="services">
+<div class="wrap reveal">
+<div class="section-head"><h2>SERVICES</h2><span data-lang-block="ja">サービス内容</span><span data-lang-block="en">SERVICE MENU</span><div class="section-code">PRODUCTION MODULES</div></div>
+<div class="important available-production">
+<div data-lang-block="ja">
+<div class="production-line"><span class="production-label">AVAILABLE PRODUCTION</span><span class="production-item">男性キャラクターデザイン</span><span class="production-item">活動用立ち絵</span><span class="production-item">Live2D用立ち絵</span><span class="production-item">三面図</span><span class="production-item">一枚絵</span><span class="production-item">キービジュアル</span><span class="production-item">MVイラスト</span><span class="production-item">表紙イラスト</span><span class="production-item">SDキャラクター</span><span class="production-item">デフォルメイラスト</span><span class="production-item">アイコン</span><span class="production-item">スタンプ</span><span class="production-item">他活動に必要な画像素材各種</span></div>
+<div class="production-line"><span class="production-label">LIVE2D PRODUCTION</span><span class="production-item">Live2D用男性立ち絵イラスト</span><span class="production-item">Live2D用パーツ分け</span><span class="production-item">Live2D男性モデリング</span><span class="production-item">VTuber男性モデル制作</span><span class="production-item">表情・ポーズ・衣装等の各種差分実装</span></div>
+</div>
+<div data-lang-block="en">
+<div class="production-line"><span class="production-label">AVAILABLE PRODUCTION</span><span class="production-item">Male character design</span><span class="production-item">Activity standing illustrations</span><span class="production-item">Live2D standing illustrations</span><span class="production-item">Character reference sheets / turnarounds</span><span class="production-item">Single illustrations</span><span class="production-item">Key visuals</span><span class="production-item">Music video illustrations</span><span class="production-item">Book cover illustrations</span><span class="production-item">Chibi characters</span><span class="production-item">Deformed illustrations</span><span class="production-item">Icons</span><span class="production-item">Stamps</span><span class="production-item">Other visual assets required for activities</span></div>
+<div class="production-line"><span class="production-label">LIVE2D PRODUCTION</span><span class="production-item">Male character illustrations for Live2D</span><span class="production-item">Live2D art separation</span><span class="production-item">Male Live2D rigging</span><span class="production-item">Male VTuber model production</span><span class="production-item">Expression / pose / outfit variation implementation</span></div>
+</div>
+</div>
+
+<div class="quote-policy">
+<div class="quote-policy-title">
+<span class="policy-code">INDIVIDUAL QUOTATION</span>
+<strong data-lang-block="ja">個別お見積り</strong>
+<strong data-lang-block="en">CUSTOM QUOTE</strong>
+</div>
+<div class="quote-policy-body">
+<div data-lang-block="ja">
+<p>固定の料金表は設けておりません。<br>制作内容・用途・制作負荷・技術的難度・ご希望納期を確認のうえ、案件ごとに個別にお見積りいたします。</p>
+<p>ご相談の際は、制作希望内容・用途・ご予算感・希望納期を添えてお問い合わせください。<br>内容および条件によっては、お引き受けできない場合があります。</p>
+<div class="quote-policy-factors"><span>制作内容</span><span>用途</span><span>制作負荷</span><span>技術的難度</span><span>希望納期</span></div>
+</div>
+<div data-lang-block="en">
+<p>Fixed price lists are not provided. Each project is quoted individually after reviewing the requested scope, intended use, production workload, technical difficulty, and preferred deadline.</p>
+<p>When contacting me, please include the requested production, intended use, budget range, and preferred deadline. Some projects may not be accepted depending on their scope and conditions.</p>
+<div class="quote-policy-factors"><span>Project Scope</span><span>Intended Use</span><span>Production Workload</span><span>Technical Difficulty</span><span>Preferred Deadline</span></div>
+</div>
+</div>
+</div>
+
+</div>
+</section>
+<section class="page paper page-grid" id="commission">
+<div class="wrap reveal">
+<div class="section-head"><h2>COMMISSION</h2><span data-lang-block="ja">ご依頼の流れ</span><span data-lang-block="en">COMMISSION PROCESS</span><div class="section-code">REQUEST PROTOCOL</div></div>
+<div class="flow">
+<div class="step"><span class="n">01</span><b>REQUEST</b><small data-lang-block="ja">ご相談・お問い合わせ</small><small data-lang-block="en">Inquiry / Consultation</small></div>
+<div class="step"><span class="n">02</span><b>REVIEW</b><small data-lang-block="ja">内容確認</small><small data-lang-block="en">Project Review</small></div>
+<div class="step"><span class="n">03</span><b>ESTIMATE</b><small data-lang-block="ja">お見積り提出</small><small data-lang-block="en">Estimate</small></div>
+<div class="step"><span class="n">04</span><b>TERMS &amp; AGREEMENT</b><small data-lang-block="ja">利用規約および業務委託契約書</small><small data-lang-block="en">Terms and Service Agreement</small></div>
+<div class="step"><span class="n">05</span><b>PAYMENT</b><small data-lang-block="ja">お支払い確認後、制作スケジュール確保</small><small data-lang-block="en">Schedule Reserved after Payment</small></div>
+<div class="step"><span class="n">06</span><b>PRODUCTION</b><small data-lang-block="ja">制作開始</small><small data-lang-block="en">Production Begins</small></div>
+<div class="step"><span class="n">07</span><b>DELIVERY</b><small data-lang-block="ja">納品</small><small data-lang-block="en">Delivery</small></div>
+</div>
+<div class="important">
+<div data-lang-block="ja"><b>REQUEST GUIDE</b><br/>
+・初めての方、イメージがまだ固まっていない段階からのご相談も可能です。<br/>
+・制作内容、用途、ご予算、希望納期を添えてお問い合わせください。<br/>
+・制作枠は、ご依頼内容の合意およびご入金確認後に正式確保となります。<br/>
+・正式なご依頼時には、制作内容に応じて「イラスト制作業務委託契約書」または「モデル制作業務委託契約書」の締結をお願いしています。<br/>
+・具体的なデザイン提案や方向性の打ち合わせ・ご相談は制作工程に含まれるため、ご入金確認後から対応可能となります。<br/>
+・詳細条件はTERMSをご確認ください。</div>
+<div data-lang-block="en"><b>REQUEST GUIDE</b><br/>
+• First-time clients and inquiries at an early, not-yet-finalized concept stage are welcome.<br/>
+• Please include the requested production, intended use, budget range, and preferred deadline.<br/>
+• Production slots are formally reserved only after the project scope is agreed and payment is confirmed.<br/>
+• For formal commissions, an Illustration Production Agreement or Model Production Agreement must be signed depending on the project.<br/>
+• Specific design proposals and direction consultations are part of the production process and are available after payment is confirmed.<br/>
+• Please review TERMS for detailed conditions.</div>
+</div>
+<div class="important critical-strip"><div data-lang-block="ja"><b>PAYMENT</b><br/>・制作費は原則前金制です。（銀行振込またはアズカリ）</div><div data-lang-block="en"><b>PAYMENT</b><br/>• Production fees are generally paid upfront. (Bank transfer or Azukari)</div></div>
+<div class="important"><div data-lang-block="ja"><b>NOT ACCEPTED</b><br/>・女性活動者を主体とする立ち絵・Live2Dモデル制作<br/>・AI生成立ち絵・AIアバターを原案とする制作依頼<br/>・学生および21歳以下の方からのご依頼<br/>・長期的な体調不良等により、継続的な制作進行・活動運用が困難と判断されるご依頼</div><div data-lang-block="en"><b>NOT ACCEPTED</b><br/>• Standing illustration or Live2D model commissions primarily for female performers<br/>• Commissions based on AI-generated standing art or AI avatars<br/>• Commissions from students or persons aged 21 or younger<br/>• Projects judged difficult to sustain due to long-term health conditions or similar circumstances</div></div>
+
+
+
+<div class="cta"><a class="btn" href="#contact"><span data-lang-block="ja">ご依頼・お問い合わせはこちら　→</span><span data-lang-block="en">COMMISSION INQUIRY　→</span></a></div>
+</div>
+</section>
+<section class="page dark page-grid" id="terms">
+<div class="wrap reveal">
+<div class="section-head"><h2>TERMS</h2><span data-lang-block="ja">制作規約</span><span data-lang-block="en">TERMS OF SERVICE</span><div class="section-code">PRODUCTION TERMS</div></div>
+<div class="terms-layout" data-lang-block="ja">
+<div class="terms-nav">
+<div class="terms-group-label">MODEL COMMISSIONS</div>
+<button class="active" data-term="model1">M01. 適用・契約・支払い</button>
+<button data-term="model2">M02. 制作進行・修正・納品</button>
+<button data-term="model3">M03. 利用範囲・改変</button>
+<button data-term="model4">M04. 実績公開・禁止事項</button>
+<button data-term="model5">M05. 停止・保証・活動終了</button>
+<div class="terms-group-label">OTHER COMMISSIONS</div>
+<button data-term="term1">01. 著作権・利用許諾</button>
+<button data-term="term2">02. 禁止事項</button>
+<button data-term="term3">03. 規約違反・迷惑行為</button>
+<button data-term="term4">04. 商用利用</button>
+<button data-term="term5">05. キャラクター・二次創作</button>
+<button data-term="term6">06. 留意事項</button>
+<button data-term="term7">07. 秘密保持</button>
+<button data-term="term8">08. 誠実協議</button>
+</div>
+<div class="terms-body">
+<div class="term-panel active" id="model1">
+<h3>M01. モデル制作｜適用・契約・支払い</h3>
+<p>本項は、配信・動画・SNS活動等で使用するモデル制作に適用します。モデル制作は著作権譲渡ではなく、作者が定める条件の範囲内で利用を許諾する契約です。</p>
+<ul>
+<li>制作内容、仕様、納期、制作費その他の条件は、案件ごとの見積内容、依頼フォームまたは個別に合意した内容に従います。</li>
+<li>制作費は原則前金制とし、制作開始および制作枠の確保は入金確認後となります。実際の着手時期は、事前に合意したスケジュールに従います。</li>
+<li>購入意思確定時までに大枠または詳細仕様を確定し、支払い後の大幅な仕様変更や制作工程を遡る変更には、追加料金または再契約が発生する場合があります。</li>
+<li>依頼者都合によるキャンセルの場合、返金には応じません。作者都合により制作継続が困難となった場合は、進行状況に応じて返金対応を行います。</li>
+</ul>
+<p class="term-note">※モデル制作の正式条件は、個別に締結する「モデル制作業務委託契約書」および案件ごとの合意内容を優先します。</p>
+</div>
+<div class="term-panel" id="model2">
+<h3>M02. モデル制作｜制作進行・修正・納品</h3>
+<ul>
+<li>制作進行に必要な確認事項について、合理的な期間内にご回答ください。</li>
+<li>修正対応は各工程につき2回までを原則とし、同一工程内で複数箇所の修正をまとめて提示した場合を「1回」として扱います。</li>
+<li>小分けによる追加修正、当初依頼内容と大きく異なる修正、制作工程を遡る修正には追加料金が発生する場合があります。</li>
+<li>納品完了後の修正、差分追加、仕様変更等は別依頼・追加料金として扱います。</li>
+<li>納品形式は案件ごとの見積内容に従い、PNG・JPG・moc3等で納品します。PSD、cmo3その他の編集可能データは提供しません。</li>
+<li>修正不要または完成了承の意思確認が取れた時点をもって完成とします。</li>
+</ul>
+</div>
+<div class="term-panel" id="model3">
+<h3>M03. モデル制作｜利用範囲・改変</h3>
+<p>モデルの著作権はYøRhaに帰属し、利用許諾は依頼者本人に対して付与されます。第三者への再許諾、譲渡その他これに類する行為はできません。</p>
+<ul>
+<li>契約申込時に申告した活動名義、活動媒体および活動用途に基づき、配信、SNS、動画、サムネイル、切り抜き、収益化配信その他活動用途で利用できます。</li>
+<li>グッズ、広告、クラウドファンディング返礼、大規模商用展開、印刷販売等も、契約上の禁止事項に抵触しない限り利用可能です。</li>
+<li>新たな活動媒体への展開、活動名義変更、事務所所属等により第三者が利用へ関与する場合は、必要に応じて事前にご相談ください。</li>
+<li>トリミング、サイズ変更、サムネイル加工、背景合成等、原型を留め劣化しない範囲での加工は可能です。</li>
+<li>原型を留めない改変、他作品との合成、AI加工、作者や作品の尊厳を損なう加工、作者を誤認させる加工は禁止します。</li>
+<li>YøRha以外がモデル制作者であると誤認される利用、またはAIを含む複数制作者による制作物と誤認される利用は禁止します。</li>
+</ul>
+</div>
+<div class="term-panel" id="model4">
+<h3>M04. モデル制作｜実績公開・禁止事項</h3>
+<ul>
+<li>作者は制作実績として、制作物をSNS、ポートフォリオその他の活動媒体へ掲載できます。実績非公開を希望する場合は、見積段階で事前申告が必要となり、別途追加費用が発生します。</li>
+<li>実績公開は原則として、依頼者による公の場への公開後に行います。公開時期の指定がある場合は事前にお知らせください。</li>
+<li>AI学習、LoRA化、img2img、AI補完、AI再生成その他AI関連利用</li>
+<li>自作発言、再配布、第三者への譲渡、再許諾</li>
+<li>申告用途以外での使用、ラフ等制作過程データの無断公開</li>
+<li>作者デザインの流用、模倣、リメイク、権利を有しない資料のトレースまたは利用</li>
+<li>宗教、政治、差別的内容、公序良俗に反する活動への利用</li>
+<li>作者または作品の名誉、信用、尊厳を損なう行為</li>
+</ul>
+<p class="term-note">※違反が確認された場合は是正を要請し、改善が見られない場合は利用許諾取消その他の必要対応を行う場合があります。</p>
+</div>
+<div class="term-panel" id="model5">
+<h3>M05. モデル制作｜停止・保証・活動終了</h3>
+<ul>
+<li>長期停止または延期が発生した場合は、協議のうえ制作スケジュール等を調整します。</li>
+<li>確認連絡後も1週間以上連絡が取れない等、音信不通となった場合は、制作終了または契約終了となる場合があります。</li>
+<li>納品後の無償対応は、納品時点で明らかに作者側の不備がある場合に限り、保証期間は納品日から1か月間です。</li>
+<li>保証期間経過後の対応、仕様変更、追加修正、納品時点に存在しなかった内容は保証対象外です。データ保管保証および破損・紛失時の再納品義務はありません。</li>
+<li>利用許諾は活動継続中に限り1年ごとに自動更新されます。申告した活動媒体で1年以上活動実態が確認できない場合、更新は停止されます。</li>
+<li>活動終了後も既存のアーカイブ、SNS投稿、動画等は継続利用できますが、新たな利用・公開・使用はできません。再利用を希望する場合は事前にご相談ください。</li>
+</ul>
+</div>
+<div class="term-panel" id="term1">
+<h3>01. モデル以外｜著作権・利用許諾について</h3>
+<p>著作権は譲渡ではありません。</p>
+<p>著作権はYøRha（以下「作者」）に帰属し、DMその他の連絡手段により個別に合意した範囲内で、制作物の利用を許諾する形式（利用許諾ライセンス付与）となります。</p>
+<p>制作物の利用にあたっては、本規約および個別に合意した条件を遵守してください。</p>
+</div>
+<div class="term-panel" id="term2">
+<h3>02. モデル以外｜禁止事項</h3>
+<p>以下の行為は禁止いたします。</p>
+<ul>
+<li>AI学習への使用、自作発言、許諾のない転載・再配信・再掲載</li>
+<li>再配布、譲渡</li>
+<li>原型を留めない改変や他者作品との合成など、作者や作品の尊厳を損なう行為</li>
+<li>申告した用途・媒体・掲載先以外での使用</li>
+<li>ラフデータおよび制作途中データの持ち出し（SNS等での公開は事前相談）</li>
+<li>宗教・政治・差別的内容、公序良俗に反する活動への利用</li>
+<li>リメイクまたは二次利用を目的として、当方制作物のデザイン・構成等を参考または流用する行為<br/>※当方のデザインが含まれない、ご依頼者様自身の原案部分を除く</li>
+<li>SNS・画像投稿サイト等へ画像を投稿・掲載する際は、作者より提供した透かし入り公開用データを使用してください。透かしなしデータの投稿・掲載は禁止します。ただし、個別に許諾された正式な納品用途として、印刷物、動画、配信画面、サムネイル、ウェブサイト、グッズその他の媒体で使用する場合はこの限りではありません。</li>
+<li>その他、作者および作品の尊厳およびイメージを損なう一切の行為</li>
+</ul>
+<p>制作または利用上必要となる関係者（印刷所、動画編集者、デザイナー等）への共有については、当該用途に必要な範囲に限り、必要最小限の共有を認めます。共有先においても、本規約および個別に合意した利用条件を超える使用はできません。また、共有先による規約違反については、ご依頼者様が責任を負うものとします。</p>
+<p class="term-note">※禁止行為が確認された場合は是正を要請し、改善が見られない場合は利用許諾の全部または一部を取り消します。規約違反を理由として利用許諾を取り消した場合、既に支払われた代金の返金は行いません。</p>
+</div>
+<div class="term-panel" id="term3">
+<h3>03. モデル以外｜規約違反・迷惑行為等への対応</h3>
+<ul>
+<li>制作中・納品後・取引終了後を問わず、規約違反、虚偽情報の流布、誹謗中傷、匿名での攻撃・嫌がらせ、取引内容の歪曲、その他作者に不利益を与える行為を禁止します。</li>
+<li>問題がある場合は、公開の場や匿名での攻撃ではなく、DM等の正規の連絡手段から直接ご連絡ください。</li>
+<li>上記行為が確認された場合、利用許諾の停止・取消し、制作物の使用停止、今後の依頼受付拒否、投稿の削除・訂正要請、関係機関への相談等の措置を講じる場合があります。</li>
+</ul>
+</div>
+<div class="term-panel" id="term4">
+<h3>04. モデル以外｜商用利用</h3>
+<ul>
+<li>商用利用については、制作内容・利用用途に応じて別途商用利用料が発生する場合があります。</li>
+<li>商用利用の有無および具体的な利用用途は、依頼時に申告してください。</li>
+<li>申告した内容から商用利用の範囲または用途を変更・追加する場合は、事前にご相談ください。</li>
+<li>商用利用によって発生した収益・損益について、作者は一切関与いたしません。</li>
+<li>無償提供した制作物の商用利用はできません。</li>
+</ul>
+</div>
+<div class="term-panel" id="term5">
+<h3>05. モデル以外｜キャラクターイラスト・二次創作について</h3>
+<p>本項は、作者がキャラクターデザイン、衣装デザイン、原案その他のデザイン要素を担当した制作物に適用します。</p>
+<ul>
+<li>ご本人およびファンの方によるファンアート制作は可能です。</li>
+<li>ファンアートは二次創作に該当するため、本規約の禁止事項を遵守するものとします。</li>
+<li>他のイラストレーター様へのファンアート依頼も可能です。</li>
+<li>他のイラストレーター様が制作物を実績として公開する場合は、作者が担当した範囲に応じて「キャラクターデザイン：YøRha」「衣装デザイン：YøRha」「原案：YøRha」等の表記を行ってください。</li>
+</ul>
+<p class="term-note">※ご依頼者様自身が原案またはデザインを担当した部分について、作者を原案者またはデザイン担当者として表記する必要はありません。</p>
+</div>
+<div class="term-panel" id="term6">
+<h3>06. モデル以外｜留意事項</h3>
+<ul>
+<li>取引外での対応について<br/>トラブル防止および、互いのプライベートな関係性を尊重する観点から、本取引を理由とした取引終了後にまで及ぶ、無条件・無償での応援・支援等は行いません。取引外において、個人間のプライベートな関係性を尊重する方針です。</li>
+</ul>
+</div>
+<div class="term-panel" id="term7">
+<h3>07. モデル以外｜秘密保持</h3>
+<p>相手方から開示を受けた技術・営業・活動に関する情報、本取引の存在および取引条件（依頼金額等を含む）、その他取引に関する一切の情報を秘密情報とします。</p>
+<p>以下の行為を禁止します。</p>
+<ul><li>秘密情報の第三者への開示</li><li>秘密情報の目的外利用</li></ul>
+<p>ただし、次の情報は秘密情報に含まれません。</p>
+<ul>
+<li>開示を受けた時点ですでに公知であった情報</li>
+<li>開示後、自己の責任によらず公知となった情報</li>
+<li>当事者間で公開について合意した情報</li>
+<li>法令または公的機関の要請により開示が必要となる情報</li>
+</ul>
+<p>本条は、本取引および活動終了後も引き続き有効とします。</p>
+</div>
+<div class="term-panel" id="term8">
+<h3>08. モデル以外｜誠実協議</h3>
+<p>本規約に定めのない事項については、本規約の趣旨に従い、当事者間で誠意をもって協議し、解決するものとします。</p>
+<p class="enacted">制定日：2026年7月29日</p>
+</div>
+</div>
+</div>
+<div class="terms-layout" data-lang-block="en">
+<div class="terms-nav">
+<div class="terms-group-label">MODEL COMMISSIONS</div>
+<button class="active" data-term="en-model1">M01. Scope / Contract / Payment</button>
+<button data-term="en-model2">M02. Process / Revisions / Delivery</button>
+<button data-term="en-model3">M03. License / Use / Modification</button>
+<button data-term="en-model4">M04. Portfolio / Prohibited Uses</button>
+<button data-term="en-model5">M05. Suspension / Warranty / End of Activity</button>
+<div class="terms-group-label">OTHER COMMISSIONS</div>
+<button data-term="en-term1">01. Copyright / License</button>
+<button data-term="en-term2">02. Prohibited Uses</button>
+<button data-term="en-term3">03. Violations / Misconduct</button>
+<button data-term="en-term4">04. Commercial Use</button>
+<button data-term="en-term5">05. Character Art / Fan Art</button>
+<button data-term="en-term6">06. Additional Notice</button>
+<button data-term="en-term7">07. Confidentiality</button>
+<button data-term="en-term8">08. Good-faith Consultation</button>
+</div>
+<div class="terms-body">
+<div class="term-panel active" id="en-model1"><h3>M01. Model Production | Scope, Contract and Payment</h3><p>These terms apply to models used for streaming, video, and social-media activities. The agreement grants a license under the Artist's conditions and does not transfer copyright.</p><ul><li>Scope, specifications, schedule, fees, and other conditions follow the project estimate and individually agreed terms.</li><li>Fees are generally paid upfront. Production and slot reservation begin only after payment is confirmed, according to the agreed schedule.</li><li>Major changes after payment or changes that return to an earlier production stage may require additional fees or a new agreement.</li><li>Client-initiated cancellation is non-refundable. If the Artist cannot continue for reasons not caused by the Client, refunds may be handled according to progress.</li></ul><p class="term-note">The individually signed Model Production Agreement and project-specific terms take precedence.</p></div>
+<div class="term-panel" id="en-model2"><h3>M02. Model Production | Process, Revisions and Delivery</h3><ul><li>Clients must respond to required confirmations within a reasonable period.</li><li>Up to two revision rounds per production stage are generally included. Multiple corrections submitted together count as one round.</li><li>Fragmented requests, changes outside the original scope, or revisions returning to earlier stages may incur additional fees.</li><li>Post-delivery revisions, added variations, and specification changes are treated as separate paid work.</li><li>Delivery format follows the estimate, such as PNG, JPG, or moc3. PSD, cmo3, and other editable source files are not provided.</li><li>The work is considered complete once the Client confirms no further revisions or approves completion.</li></ul></div>
+<div class="term-panel" id="en-model3"><h3>M03. Model Production | License, Use and Modification</h3><p>Copyright remains with YøRha. The license is granted only to the Client and may not be sublicensed, transferred, or assigned.</p><ul><li>The model may be used under the declared activity name, platforms, and purposes, including streaming, social media, videos, thumbnails, clips, and monetized activities.</li><li>Merchandise, advertising, crowdfunding rewards, large-scale commercial use, and printed sales are allowed provided they do not violate the agreement.</li><li>Consult the Artist when adding new platforms, changing the activity name, or involving an agency or other third party.</li><li>Cropping, resizing, thumbnail editing, and background compositing are allowed if the original form and quality are preserved.</li><li>Substantial alteration, compositing with other works, AI processing, degrading edits, or edits that misrepresent authorship are prohibited.</li></ul></div>
+<div class="term-panel" id="en-model4"><h3>M04. Model Production | Portfolio and Prohibited Uses</h3><ul><li>The Artist may publish the work as portfolio material. Confidential portfolio treatment must be requested at the estimate stage and may require an additional fee.</li><li>Portfolio publication normally occurs after the Client's public release.</li><li>AI training, LoRA, img2img, AI completion, AI regeneration, or any other AI-related use is prohibited.</li><li>False claims of authorship, redistribution, transfer, and sublicensing are prohibited.</li><li>Undeclared use, unauthorized publication of rough or process data, design imitation or remake, unauthorized tracing, political/religious/discriminatory use, and conduct damaging the Artist or work are prohibited.</li></ul><p class="term-note">Violations may result in correction requests, license termination, and other necessary action.</p></div>
+<div class="term-panel" id="en-model5"><h3>M05. Model Production | Suspension, Warranty and End of Activity</h3><ul><li>Long-term suspension or delay will be handled by consultation and schedule adjustment.</li><li>If no response is received for one week or more after a confirmation request, production or the agreement may be terminated.</li><li>Free post-delivery correction is limited to clear Artist-side defects and is available for one month from delivery.</li><li>After the warranty period, changes, added revisions, and newly arising requests are excluded. Data storage and redelivery after loss are not guaranteed.</li><li>The license renews annually only while the activity continues. Renewal may stop if no activity is confirmed for one year or more.</li><li>Existing archives and posts may remain after activity ends, but new use or publication requires prior consultation.</li></ul></div>
+<div class="term-panel" id="en-term1"><h3>01. Other Commissions | Copyright and License</h3><p>Copyright is not transferred. Copyright remains with YøRha (the “Artist”), and the Client receives a license limited to the scope individually agreed through DM or other communication. Use must comply with these terms and all individually agreed conditions.</p></div>
+<div class="term-panel" id="en-term2"><h3>02. Other Commissions | Prohibited Uses</h3><ul><li>AI training, false claims of authorship, and unauthorized reposting, retransmission, or republication</li><li>Redistribution or transfer</li><li>Substantial alteration, compositing, or conduct that harms the dignity of the Artist or work</li><li>Use outside the declared purpose, media, or publication destination</li><li>Removal or publication of rough and work-in-progress data without prior approval</li><li>Religious, political, discriminatory, unlawful, or socially unacceptable use</li><li>Using the Artist's design or composition as a basis for remake or secondary use, excluding the Client's own original elements</li><li>Social-media and image-site posts must use the watermarked public version supplied by the Artist. Unwatermarked posting is prohibited, except for specifically licensed final uses such as print, video, streaming screens, thumbnails, websites, or merchandise.</li></ul><p>Necessary sharing with printers, video editors, designers, or similar parties is allowed only to the minimum extent required. The Client remains responsible for violations by those parties.</p><p class="term-note">Violations may result in partial or total license revocation without refund.</p></div>
+<div class="term-panel" id="en-term3"><h3>03. Other Commissions | Violations and Misconduct</h3><ul><li>Violations, false statements, defamation, anonymous harassment, distortion of transaction details, and other conduct harming the Artist are prohibited during and after the project.</li><li>Concerns must be raised directly through official communication channels rather than public or anonymous attacks.</li><li>Measures may include suspension or revocation of the license, cessation of use, refusal of future commissions, deletion/correction requests, or consultation with relevant authorities.</li></ul></div>
+<div class="term-panel" id="en-term4"><h3>04. Other Commissions | Commercial Use</h3><ul><li>Additional commercial-use fees may apply depending on scope and purpose.</li><li>Commercial use and its specific purpose must be declared at the time of request.</li><li>Changes or additions to commercial use require prior consultation.</li><li>The Artist is not involved in profits or losses resulting from commercial use.</li><li>Works provided free of charge may not be used commercially.</li></ul></div>
+<div class="term-panel" id="en-term5"><h3>05. Other Commissions | Character Art and Fan Art</h3><p>This section applies where the Artist created character design, costume design, original concepts, or other design elements.</p><ul><li>The Client and fans may create fan art.</li><li>Fan art is derivative work and must comply with these prohibited-use provisions.</li><li>Fan-art commissions to other illustrators are allowed.</li><li>When another illustrator publishes such work as portfolio material, credit YøRha according to the Artist's contribution, such as “Character Design: YøRha,” “Costume Design: YøRha,” or “Original Concept: YøRha.”</li></ul></div>
+<div class="term-panel" id="en-term6"><h3>06. Other Commissions | Additional Notice</h3><p>To prevent disputes and respect private relationships, the transaction does not create an obligation for unconditional or unpaid support after the project ends. Private relationships outside the transaction are respected.</p></div>
+<div class="term-panel" id="en-term7"><h3>07. Other Commissions | Confidentiality</h3><p>Technical, business, activity-related, transaction, pricing, and other project information disclosed by either party is confidential. Disclosure to third parties and use outside the intended purpose are prohibited.</p><p>Public information, information becoming public without fault, information approved for publication, and information required by law or public authorities are excluded. This obligation survives the end of the project and activity.</p></div>
+<div class="term-panel" id="en-term8"><h3>08. Other Commissions | Good-faith Consultation</h3><p>Matters not covered by these terms will be resolved through good-faith consultation between the parties in accordance with the purpose of these terms.</p><p class="enacted">Established: July 29, 2026</p></div>
+</div>
+</div>
+
+</div>
+</section>
+<section class="page paper page-grid" id="contact">
+<div class="wrap reveal">
+<div class="section-head"><h2>CONTACT</h2><span data-lang-block="ja">お問い合わせ</span><span data-lang-block="en">CONTACT</span><div class="section-code">INITIALIZE REQUEST</div></div>
+<div class="contact-center">
+<div class="contact-frame">
+<div class="mark">✦</div>
+<h2>INITIALIZE</h2><h3>COMMISSION REQUEST</h3>
+<p data-lang-block="ja">ご依頼・ご相談は、専用フォームより受け付けております。</p>
+<p data-lang-block="en">Commission requests and inquiries are accepted through the dedicated form.</p>
+<a class="btn" href="https://yorha888.github.io/form/" rel="noopener" target="_blank"><span data-lang-block="ja">フォームを開く ↗</span><span data-lang-block="en">OPEN FORM ↗</span></a>
+<div class="url">https://yorha888.github.io/form/</div>
+</div>
+</div>
+</div>
+</section>
+<footer><span>YøRha ARCHIVE SYSTEM / BUILD 1.5</span><span>© YøRha</span></footer>
+<div aria-hidden="true" class="modal" id="modal">
+<div class="modal-content">
+<button aria-label="閉じる" class="modal-close" id="modalClose">×</button>
+<img alt="" id="modalImage" src=""/>
+<video id="modalVideo" controls playsinline preload="metadata" hidden></video>
+<div class="modal-caption" id="modalCaption"></div>
+</div>
+</div>
+<script>
+const loader=document.getElementById('loader');
+window.addEventListener('load',()=>setTimeout(()=>{
+  loader.classList.add('hide');
+  document.body.classList.remove('no-scroll');
+},900));
+
+const menuButton=document.getElementById('menuButton');
+const mobileNav=document.getElementById('mobileNav');
+menuButton.addEventListener('click',()=>{
+  mobileNav.classList.toggle('open');
+  menuButton.textContent=mobileNav.classList.contains('open')?'×':'☰';
+});
+mobileNav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+  mobileNav.classList.remove('open');menuButton.textContent='☰';
+}));
+
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{if(entry.isIntersecting)entry.target.classList.add('visible')});
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+// WORKS data: add one object here for each new image.
+const works = [
+  { image: "assets/works001.mp4", title: "ARCHIVE 001 / LIVE2D MOVIE", category: "live2d", label: "LIVE2D MOVIE", position: "center", type: "video", featured: true },
+  { image: "assets/works002.jpg", title: "ARCHIVE 002 / LIVE2D MODEL", category: "live2d", label: "LIVE2D MODEL", position: "center" },
+  { image: "assets/works003.jpg", title: "ARCHIVE 003 / ILLUSTRATION", category: "illust", label: "ILLUSTRATION", position: "center" },
+  { image: "assets/works004.jpg", title: "ARCHIVE 004 / KEY VISUAL", category: "visual", label: "KEY VISUAL", position: "center" },
+  { image: "assets/works005.jpg", title: "ARCHIVE 005 / CHARACTER DESIGN", category: "design", label: "CHARACTER DESIGN", position: "center" },
+  { image: "assets/works006.jpg", title: "ARCHIVE 006 / LIVE2D MODEL", category: "live2d", label: "LIVE2D MODEL", position: "center" },
+  { image: "assets/works007.jpg", title: "ARCHIVE 007 / SD CHARACTER", category: "sd", label: "SD CHARACTER", position: "center" },
+  { image: "assets/works008.jpg", title: "ARCHIVE 008 / ILLUSTRATION", category: "illust", label: "ILLUSTRATION", position: "center" },
+  { image: "assets/works009.jpg", title: "ARCHIVE 009 / KEY VISUAL", category: "visual", label: "KEY VISUAL", position: "center" },
+  { image: "assets/works010.jpg", title: "ARCHIVE 010 / CHARACTER DESIGN", category: "design", label: "CHARACTER DESIGN", position: "center" },
+  { image: "assets/works011.jpg", title: "ARCHIVE 011 / LIVE2D MODEL", category: "live2d", label: "LIVE2D MODEL", position: "center" },
+  { image: "assets/works012.jpg", title: "ARCHIVE 012 / CHARACTER DESIGN", category: "design", label: "CHARACTER DESIGN", position: "center" },
+  { image: "assets/works013.jpg", title: "ARCHIVE 013 / ILLUSTRATION", category: "illust", label: "ILLUSTRATION", position: "center" }
+];
+
+const WORKS_PER_PAGE = 12;
+const workGrid = document.getElementById('workGrid');
+const loadMoreWorks = document.getElementById('loadMoreWorks');
+const filterButtons = [...document.querySelectorAll('.filters button')];
+let activeWorkFilter = 'all';
+let visibleWorkCount = WORKS_PER_PAGE;
+
+const positionClass = position => {
+  const map = {'center top':'pos-top','center bottom':'pos-bottom','left center':'pos-left','right center':'pos-right'};
+  return map[position] || '';
+};
+
+function filteredWorks(){
+  return activeWorkFilter === 'all' ? works : works.filter(work => work.category === activeWorkFilter);
+}
+
+function openWorkModal(work){
+  const isVideo = work.type === 'video' || /\.mp4$/i.test(work.image);
+  modalImage.hidden = isVideo;
+  modalVideo.hidden = !isVideo;
+  if(isVideo){
+    modalImage.removeAttribute('src');
+    modalVideo.src = work.image;
+    modalVideo.load();
+  }else{
+    modalVideo.pause();
+    modalVideo.removeAttribute('src');
+    modalImage.src = work.image;
+    modalImage.alt = work.title;
+  }
+  modalCaption.textContent = work.title || 'PROJECT DATA';
+  modal.classList.add('open');
+  document.body.classList.add('no-scroll');
+  modal.setAttribute('aria-hidden','false');
+}
+
+function renderWorks(){
+  const list = filteredWorks();
+  const visible = list.slice(0, visibleWorkCount);
+  workGrid.innerHTML = '';
+  visible.forEach((work, index) => {
+    const archiveNumber = String(works.indexOf(work) + 1).padStart(2,'0');
+    const card = document.createElement('article');
+    card.className = `work-card${work.featured ? ' featured' : ''}${positionClass(work.position) ? ' ' + positionClass(work.position) : ''}`;
+    card.dataset.cat = work.category;
+    card.dataset.title = work.title;
+    const isVideo = work.type === 'video' || /\.mp4$/i.test(work.image);
+    const media = isVideo
+      ? `<video src="${work.image}" muted loop playsinline preload="metadata" aria-label="${work.title}"></video>`
+      : `<img src="${work.image}" alt="${work.title}">`;
+    card.innerHTML = `${media}<span class="work-number">${archiveNumber}</span><div class="work-meta"><b>ARCHIVE ${String(works.indexOf(work) + 1).padStart(3,'0')}</b><small>${work.label || work.category.toUpperCase()}</small></div>`;
+    if(isVideo){
+      const preview = card.querySelector('video');
+      card.addEventListener('mouseenter',()=>preview.play().catch(()=>{}));
+      card.addEventListener('mouseleave',()=>{preview.pause();preview.currentTime=0;});
+    }
+    card.addEventListener('click', () => openWorkModal(work));
+    workGrid.appendChild(card);
+  });
+  loadMoreWorks.hidden = visibleWorkCount >= list.length;
+}
+
+filterButtons.forEach(btn => btn.addEventListener('click', () => {
+  filterButtons.forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  activeWorkFilter = btn.dataset.filter;
+  visibleWorkCount = WORKS_PER_PAGE;
+  renderWorks();
+}));
+
+loadMoreWorks.addEventListener('click', () => {
+  visibleWorkCount += WORKS_PER_PAGE;
+  renderWorks();
+});
+
+const modal=document.getElementById('modal');
+const modalImage=document.getElementById('modalImage');
+const modalVideo=document.getElementById('modalVideo');
+const modalCaption=document.getElementById('modalCaption');
+const closeModal=()=>{modal.classList.remove('open');modalVideo.pause();document.body.classList.remove('no-scroll');modal.setAttribute('aria-hidden','true')};
+document.getElementById('modalClose').addEventListener('click',closeModal);
+modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+renderWorks();
+
+const termButtons=[...document.querySelectorAll('.terms-nav button')];
+const termPanels=[...document.querySelectorAll('.term-panel')];
+termButtons.forEach(btn=>btn.addEventListener('click',()=>{
+  termButtons.forEach(b=>b.classList.remove('active'));btn.classList.add('active');
+  termPanels.forEach(p=>p.classList.toggle('active',p.id===btn.dataset.term));
+}));
+
+
+// Language switch
+const langButtons=document.querySelectorAll('[data-lang-switch]');
+function setLanguage(lang){
+  document.body.classList.toggle('lang-en',lang==='en');
+  document.documentElement.lang=lang;
+  langButtons.forEach(b=>b.classList.toggle('active',b.dataset.langSwitch===lang));
+  localStorage.setItem('yorha-language',lang);
+  document.title = lang === 'en' ? 'YøRha | Illustrator / Live2D Creator' : 'YøRha | イラストレーター / Live2D Creator';
+}
+langButtons.forEach(b=>b.addEventListener('click',()=>setLanguage(b.dataset.langSwitch)));
+setLanguage(localStorage.getItem('yorha-language')||'ja');
+</script>
+</body>
+</html>
