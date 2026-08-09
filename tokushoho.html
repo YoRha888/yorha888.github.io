@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="YøRha 特定商取引法に基づく表記">
+<meta name="theme-color" content="#111111">
+<title>特定商取引法に基づく表記 | YøRha</title>
+<style>
+:root{
+  --black:#111;
+  --black2:#171717;
+  --paper:#e9e4dc;
+  --ink:#171717;
+  --white:#eee8dd;
+  --line-dark:rgba(255,255,255,.16);
+  --line-light:rgba(20,20,20,.23);
+  --accent:#b8aa8e;
+  --header:68px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:"Helvetica Neue","Yu Gothic","YuGothic",Meiryo,sans-serif;
+  letter-spacing:.02em;
+}
+a{color:inherit;text-decoration:none}
+.noise{
+  position:fixed;inset:0;z-index:100;pointer-events:none;opacity:.11;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E")
+}
+header{
+  height:var(--header);position:fixed;z-index:80;inset:0 0 auto;
+  background:rgba(17,17,17,.96);backdrop-filter:blur(8px);
+  color:var(--white);border-bottom:1px solid var(--line-dark);
+  display:flex;align-items:center;padding:0 27px
+}
+.logo{font:23px Georgia,serif;letter-spacing:.08em;white-space:nowrap}
+.logo:before{content:"✦";font-size:11px;margin-right:10px;color:var(--accent)}
+.back{
+  margin-left:auto;font-size:10px;letter-spacing:.14em;opacity:.8;
+  border:1px solid var(--line-dark);padding:9px 13px;
+}
+.back:hover{opacity:1;background:#24221f}
+.page{
+  min-height:100vh;padding-top:var(--header);position:relative;overflow:hidden;
+  background:
+    repeating-linear-gradient(0deg,transparent 0 31px,rgba(0,0,0,.018) 32px),
+    linear-gradient(90deg,rgba(255,255,255,.2),transparent 18%,transparent 82%,rgba(0,0,0,.035)),
+    var(--paper);
+}
+.page:before{
+  content:"";position:absolute;inset:0;pointer-events:none;opacity:.36;
+  background-image:
+    linear-gradient(rgba(0,0,0,.024) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(0,0,0,.024) 1px,transparent 1px);
+  background-size:320px 320px
+}
+.page:after{
+  content:"YRH-LEGAL-001";position:absolute;right:20px;bottom:14px;
+  font-size:10px;letter-spacing:.15em;opacity:.52
+}
+.wrap{width:min(1120px,92vw);margin:auto;padding:56px 0 70px;position:relative;z-index:2}
+.section-head{
+  display:flex;align-items:end;gap:24px;padding-bottom:18px;
+  border-bottom:1px solid currentColor
+}
+.section-head h1{font:400 clamp(30px,4vw,42px) Georgia,serif;margin:0;letter-spacing:.025em}
+.section-head span{font-size:11px;opacity:.64;padding-bottom:6px}
+.section-code{margin-left:auto;font-size:10px;letter-spacing:.14em;opacity:.45;padding-bottom:6px}
+.lead{
+  margin:28px 0 18px;padding:20px 22px;border:1px solid var(--line-light);
+  font-size:12px;line-height:1.9;background:rgba(255,255,255,.16)
+}
+.table{
+  border:1px solid var(--line-light);
+  background:rgba(255,255,255,.11);
+}
+.row{
+  display:grid;grid-template-columns:240px minmax(0,1fr);
+  border-bottom:1px solid var(--line-light);
+}
+.row:last-child{border-bottom:0}
+.label{
+  padding:18px 20px;border-right:1px solid var(--line-light);
+  font-size:11px;font-weight:700;letter-spacing:.05em;background:rgba(0,0,0,.025)
+}
+.value{padding:18px 22px;font-size:12px;line-height:1.9}
+.value a{text-decoration:underline;text-underline-offset:3px}
+.note{
+  margin-top:22px;padding:18px 20px;border:1px solid var(--line-light);
+  font-size:11px;line-height:1.9;color:#5f5a52
+}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:14px 20px;background:#171717;color:#eee8dd;
+  font-size:10px;letter-spacing:.12em;border:1px solid #171717
+}
+.btn.alt{background:transparent;color:#171717}
+footer{
+  background:#101010;color:#aaa;padding:17px 29px;
+  display:flex;justify-content:space-between;gap:20px;
+  font-size:10px;letter-spacing:.12em
+}
+@media(max-width:720px){
+  :root{--header:62px}
+  header{padding:0 18px}.logo{font-size:20px}
+  .wrap{width:90vw;padding-top:40px}
+  .section-head{align-items:flex-start;flex-direction:column;gap:7px}
+  .section-code{margin-left:0}
+  .row{grid-template-columns:1fr}
+  .label{border-right:0;border-bottom:1px solid var(--line-light);padding:13px 16px}
+  .value{padding:15px 16px}
+  footer{flex-direction:column}
+}
+</style>
+</head>
+<body>
+<div class="noise"></div>
+<header>
+<a class="logo" href="../">YøRha</a>
+<a class="back" href="../">← BACK TO ARCHIVE</a>
+</header>
+
+<main class="page">
+<div class="wrap">
+<div class="section-head">
+<h1>特定商取引法に基づく表記</h1>
+<span>COMMERCIAL TRANSACTION DISCLOSURE</span>
+<div class="section-code">LEGAL ARCHIVE / YRH-001</div>
+</div>
+
+<div class="lead">
+本ページは、YøRhaが提供するイラスト制作、キャラクターデザイン、Live2Dモデル用イラスト制作、Live2Dモデリングその他の受託制作サービスに関する表示です。
+</div>
+
+<div class="table">
+<div class="row">
+<div class="label">販売事業者 / 役務提供事業者</div>
+<div class="value">請求があった場合、遅滞なく開示いたします。</div>
+</div>
+
+<div class="row">
+<div class="label">運営責任者</div>
+<div class="value">請求があった場合、遅滞なく開示いたします。</div>
+</div>
+
+<div class="row">
+<div class="label">所在地</div>
+<div class="value">請求があった場合、遅滞なく開示いたします。</div>
+</div>
+
+<div class="row">
+<div class="label">電話番号</div>
+<div class="value">請求があった場合、遅滞なく開示いたします。</div>
+</div>
+
+<div class="row">
+<div class="label">お問い合わせ</div>
+<div class="value">
+専用お問い合わせフォームよりご連絡ください。<br>
+<a href="https://yorha888.github.io/form/" target="_blank" rel="noopener">https://yorha888.github.io/form/</a>
+</div>
+</div>
+
+<div class="row">
+<div class="label">提供する役務</div>
+<div class="value">
+イラスト制作、キャラクターデザイン、Live2Dモデル用イラスト制作、Live2Dモデリングその他、個別に合意したクリエイティブ制作業務。
+</div>
+</div>
+
+<div class="row">
+<div class="label">販売価格 / 役務の対価</div>
+<div class="value">
+案件ごとに制作内容・用途・制作負荷・技術的難度・希望納期等を確認のうえ個別にお見積りし、申込み前に見積書または決済画面等で提示します。<br>
+公式サイトの「PRICE」に掲載している金額は最低料金です。
+</div>
+</div>
+
+<div class="row">
+<div class="label">商品代金以外に必要な料金</div>
+<div class="value">
+銀行振込をご利用の場合の振込手数料、ならびに個別見積りで合意した追加制作費・オプション料金等。インターネット接続に必要な通信料金等はお客様のご負担となります。
+</div>
+</div>
+
+<div class="row">
+<div class="label">支払方法</div>
+<div class="value">
+銀行振込、Stripeによるオンライン決済、アズカリ、その他案件ごとに合意した方法。<br>
+Stripeで利用可能な具体的な決済方法は、個別にご案内する決済画面に表示されます。
+</div>
+</div>
+
+<div class="row">
+<div class="label">支払時期</div>
+<div class="value">
+制作費は原則前払いです。見積り・契約内容または個別に案内する支払期限までにお支払いください。入金確認後、制作枠を正式に確保し、合意したスケジュールに従って制作を開始します。
+</div>
+</div>
+
+<div class="row">
+<div class="label">役務の提供時期 / 納品時期</div>
+<div class="value">
+入金確認後、案件ごとに合意した制作スケジュールに従い制作し、見積書・契約書・DMその他の正規の連絡手段で合意した納期までに納品します。
+</div>
+</div>
+
+<div class="row">
+<div class="label">納品方法</div>
+<div class="value">
+PNG、JPG、moc3その他案件ごとに合意したデジタルデータを、個別に合意したオンライン手段で納品します。編集可能データの提供可否は、契約内容および利用規約に従います。
+</div>
+</div>
+
+<div class="row">
+<div class="label">キャンセル・返金</div>
+<div class="value">
+受注制作という性質上、依頼者都合によるキャンセルの場合、支払済みの制作費は原則として返金しません。作者側の事情により制作継続が困難となり、依頼者側に原因がない場合は、制作進行状況その他の事情を踏まえ、契約内容に従って返金対応を行います。詳細は案件ごとの契約書・利用規約・個別合意内容を優先します。
+</div>
+</div>
+
+<div class="row">
+<div class="label">納品後の返品・交換</div>
+<div class="value">
+デジタルデータおよび個別受注制作の性質上、納品後の返品・交換は受け付けておりません。納品時点で明らかに作者側の不備が認められる場合の対応は、案件ごとの契約書・利用規約に従います。
+</div>
+</div>
+
+<div class="row">
+<div class="label">申込みの有効期限</div>
+<div class="value">
+見積書、決済リンクその他の案内に有効期限または支払期限を定めた場合は、その期限までとします。
+</div>
+</div>
+</div>
+
+<div class="note">
+氏名（名称）・所在地・電話番号について開示を希望される場合は、上記お問い合わせフォームよりご請求ください。申込みの意思決定に先立って確認できるよう、遅滞なく提供いたします。<br><br>
+制定・更新日：2026年8月10日
+</div>
+
+<div class="actions">
+<a class="btn" href="../#terms">TERMSを見る</a>
+<a class="btn alt" href="../#price">PRICEを見る</a>
+<a class="btn alt" href="https://yorha888.github.io/form/" target="_blank" rel="noopener">お問い合わせ</a>
+</div>
+</div>
+</main>
+
+<footer>
+<span>YøRha ARCHIVE SYSTEM / LEGAL DISCLOSURE</span>
+<span>© YøRha</span>
+</footer>
+</body>
+</html>
