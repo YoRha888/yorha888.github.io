@@ -6,6 +6,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="YøRha — Male Character Artist / Live2D Creator" name="description"/>
 <meta content="#111111" name="theme-color"/>
+<link rel="icon" type="image/png" href="assets/favicon.png"/>
 <title>YøRha Archive</title>
 <style>
 :root{
@@ -162,14 +163,27 @@ nav a:hover:after{right:0}
   background:none;color:#eee8dc;font-size:9px;letter-spacing:.11em;cursor:pointer;transition:.2s
 }
 .filters button.active,.filters button:hover{background:#2b2925}
-.work-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.work-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-flow:dense;gap:8px}
 .work-card{
   position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.16);
-  aspect-ratio:3/4;background:#242424;cursor:pointer
+  aspect-ratio:4/3;background:#242424;cursor:pointer
 }
 .work-card.featured{grid-column:span 2;grid-row:span 2}
 .work-card img,.work-card video{width:100%;height:100%;object-fit:cover;display:block;transition:transform .45s,filter .45s}
 .work-card:hover img{transform:scale(1.035);filter:contrast(1.05)}
+.work-card.placeholder{
+  cursor:default;
+  pointer-events:none;
+}
+.work-card.placeholder img{
+  transform:none!important;
+  filter:none!important;
+}
+.work-card.placeholder .work-meta,
+.work-card.placeholder .work-number{
+  display:none;
+}
+
 .work-meta{position:absolute;inset:auto 0 0;padding:48px 13px 13px;background:linear-gradient(transparent,rgba(0,0,0,.94))}
 .work-meta b{font-size:9px;letter-spacing:.13em}
 .work-meta small{display:block;font-size:9px;opacity:.68;margin-top:5px}
@@ -927,7 +941,6 @@ body.lang-en span[data-lang-block="en"],body.lang-en b[data-lang-block="en"],bod
 </div>
 <div>
 <div class="work-grid" id="workGrid"></div>
-<button class="load-more" id="loadMoreWorks" type="button">＋　LOAD MORE ARCHIVE　＋</button>
 </div>
 </div>
 </div>
@@ -1622,7 +1635,7 @@ document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 
 // WORKS data: add one object here for each new image.
 const works = [
-  { image: "assets/works001.mp4", title: "ARCHIVE 001 / LIVE2D MOVIE", category: "live2d", label: "LIVE2D MOVIE", position: "center", type: "video", featured: true },
+  { image: "assets/pickup.png", title: "ARCHIVE 001 / PICKUP", category: "live2d", label: "PICKUP", position: "center", featured: true },
   { image: "assets/works014.jpg", title: "ARCHIVE 012 / ILLUSTRATION", category: "illust", label: "ILLUSTRATION", position: "center" },
   { image: "assets/works006.jpg", title: "ARCHIVE 006 / LIVE2D MODEL", category: "live2d", label: "LIVE2D MODEL", position: "center" },
   { image: "assets/works002.jpg", title: "ARCHIVE 002 / CHARACTER DESIGN", category: "live2d", label: "CHARACTER DESIGN", position: "center" },
@@ -1638,12 +1651,9 @@ const works = [
   { image: "assets/works013.jpg", title: "ARCHIVE 013 / ILLUSTRATION", category: "illust", label: "ILLUSTRATION", position: "center" }
 ];
 
-const WORKS_PER_PAGE = 12;
 const workGrid = document.getElementById('workGrid');
-const loadMoreWorks = document.getElementById('loadMoreWorks');
 const filterButtons = [...document.querySelectorAll('.filters button')];
 let activeWorkFilter = 'all';
-let visibleWorkCount = WORKS_PER_PAGE;
 
 const positionClass = position => {
   const map = {'center top':'pos-top','center bottom':'pos-bottom','left center':'pos-left','right center':'pos-right'};
@@ -1676,9 +1686,8 @@ function openWorkModal(work){
 
 function renderWorks(){
   const list = filteredWorks();
-  const visible = list.slice(0, visibleWorkCount);
   workGrid.innerHTML = '';
-  visible.forEach((work, index) => {
+  list.forEach((work, index) => {
     const archiveNumber = String(works.indexOf(work) + 1).padStart(2,'0');
     const card = document.createElement('article');
     card.className = `work-card${work.featured ? ' featured' : ''}${positionClass(work.position) ? ' ' + positionClass(work.position) : ''}`;
@@ -1697,21 +1706,26 @@ function renderWorks(){
     card.addEventListener('click', () => openWorkModal(work));
     workGrid.appendChild(card);
   });
-  loadMoreWorks.hidden = visibleWorkCount >= list.length;
+
+  // Keep the 4-column desktop archive visually complete.
+  // A featured pickup occupies 2×2 cells (= 4 grid cells).
+  const usedGridCells = list.reduce((sum, work) => sum + (work.featured ? 4 : 1), 0);
+  const placeholderCount = (4 - (usedGridCells % 4)) % 4;
+  for(let i = 0; i < placeholderCount; i++){
+    const placeholder = document.createElement('article');
+    placeholder.className = 'work-card placeholder';
+    placeholder.setAttribute('aria-hidden','true');
+    placeholder.innerHTML = '<img src="assets/works_no.png" alt="">';
+    workGrid.appendChild(placeholder);
+  }
 }
 
 filterButtons.forEach(btn => btn.addEventListener('click', () => {
   filterButtons.forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
   activeWorkFilter = btn.dataset.filter;
-  visibleWorkCount = WORKS_PER_PAGE;
   renderWorks();
 }));
-
-loadMoreWorks.addEventListener('click', () => {
-  visibleWorkCount += WORKS_PER_PAGE;
-  renderWorks();
-});
 
 const modal=document.getElementById('modal');
 const modalImage=document.getElementById('modalImage');
