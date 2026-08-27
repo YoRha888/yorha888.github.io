@@ -183,6 +183,10 @@ nav a:hover:after{right:0}
 .work-card.placeholder .work-number{
   display:none;
 }
+.work-card.featured .work-number{
+  display:none;
+}
+
 
 .work-meta{position:absolute;inset:auto 0 0;padding:48px 13px 13px;background:linear-gradient(transparent,rgba(0,0,0,.94))}
 .work-meta b{font-size:9px;letter-spacing:.13em}
@@ -933,11 +937,12 @@ body.lang-en span[data-lang-block="en"],body.lang-en b[data-lang-block="en"],bod
 <div class="works-layout">
 <div class="filters">
 <button class="active" data-filter="all">ALL</button>
-<button data-filter="design">CHARACTER DESIGN</button>
-<button data-filter="live2d">VTUBER / LIVE2D</button>
+<button data-filter="live2d">LIVE2D MOVIE</button>
+<button data-filter="style">ILLUSTRATION STYLE</button>
 <button data-filter="illust">ILLUSTRATION</button>
-<button data-filter="visual">KEY VISUAL</button>
 <button data-filter="sd">SD CHARACTER</button>
+<button data-filter="design">CHARACTER DESIGN</button>
+<button data-filter="reference">REFERENCE SHEET</button>
 </div>
 <div>
 <div class="work-grid" id="workGrid"></div>
@@ -1635,20 +1640,22 @@ document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 
 // WORKS data: add one object here for each new image.
 const works = [
-  { image: "assets/pickup.png", title: "ARCHIVE 001 / PICKUP", category: "live2d", label: "PICKUP", position: "center", featured: true },
-  { image: "assets/works014.jpg", title: "ARCHIVE 012 / ILLUSTRATION", category: "illust", label: "ILLUSTRATION", position: "center" },
-  { image: "assets/works006.jpg", title: "ARCHIVE 006 / LIVE2D MODEL", category: "live2d", label: "LIVE2D MODEL", position: "center" },
-  { image: "assets/works002.jpg", title: "ARCHIVE 002 / CHARACTER DESIGN", category: "live2d", label: "CHARACTER DESIGN", position: "center" },
-  { image: "assets/works003.jpg", title: "ARCHIVE 003 / ILLUSTRATION", category: "illust", label: "ILLUSTRATION", position: "center" },
-  { image: "assets/works004.jpg", title: "ARCHIVE 004 / ILLUSTRATION", category: "visual", label: "ILLUSTRATION", position: "center" },
-  { image: "assets/works005.jpg", title: "ARCHIVE 005 / ILLUSTRATION", category: "design", label: "ILLUSTRATION", position: "center" },
- { image: "assets/works007.jpg", title: "ARCHIVE 007 / SD CHARACTER", category: "sd", label: "SD CHARACTER", position: "center" },
-  { image: "assets/works008.jpg", title: "ARCHIVE 008 / LIVE2D MODEL", category: "illust", label: "LIVE2D MODEL", position: "center" },
-  { image: "assets/works009.jpg", title: "ARCHIVE 009 / CHARACTER DESIGN", category: "visual", label: "CHARACTER DESIGN", position: "center" },
-  { image: "assets/works010.jpg", title: "ARCHIVE 010 / CHARACTER DESIGN", category: "design", label: "CHARACTER DESIGN", position: "center" },
-  { image: "assets/works011.jpg", title: "ARCHIVE 011 / LIVE2D MODEL", category: "live2d", label: "LIVE2D MODEL", position: "center" },
+  { image: "assets/pickup.jpg", title: "PICKUP", category: "pickup", label: "PICKUP", position: "center", featured: true },
+  { image: "assets/works001.jpg", title: "ARCHIVE 001 / CHARACTER DESIGN", category: "live2d", label: "LIVE2D MOVIE", position: "center", type: "video" },
+  { image: "assets/works002.jpg", title: "ARCHIVE 002 / ILLUSTRATION STYLE", category: "style", label: "ILLUSTRATION STYLE", position: "center" },
+  { image: "assets/works003.jpg", title: "ARCHIVE 003 / LIVE2D MOVIE", category: "live2d", label: "LIVE2D MOVIE", position: "center" },
+  { image: "assets/works004.jpg", title: "ARCHIVE 004 / ILLUSTRATION", category: "illust", label: "ILLUSTRATION", position: "center" },
+  { image: "assets/works005.jpg", title: "ARCHIVE 005 / ILLUSTRATION", category: "illust", label: "ILLUSTRATION", position: "center" },
+  { image: "assets/works006.jpg", title: "ARCHIVE 006 / ILLUSTRATION", category: "illust", label: "ILLUSTRATION", position: "center" },
+  { image: "assets/works007.jpg", title: "ARCHIVE 007 / ILLUSTRATION", category: "illust", label: "ILLUSTRATION", position: "center" },
+  { image: "assets/works008.jpg", title: "ARCHIVE 008 / ILLUSTRATION", category: "illust", label: "ILLUSTRATION", position: "center" },
+  { image: "assets/works009.mp4", title: "ARCHIVE 009 / SD CHARACTER", category: "sd", label: "SD CHARACTER", position: "center" },
+  { image: "assets/works010.jpg", title: "ARCHIVE 010 / SD CHARACTER", category: "sd", label: "SD CHARACTER", position: "center" },
+  { image: "assets/works011.jpg", title: "ARCHIVE 011 / CHARACTER DESIGN", category: "design", label: "CHARACTER DESIGN", position: "center" },
   { image: "assets/works012.jpg", title: "ARCHIVE 012 / CHARACTER DESIGN", category: "design", label: "CHARACTER DESIGN", position: "center" },
-  { image: "assets/works013.jpg", title: "ARCHIVE 013 / ILLUSTRATION", category: "illust", label: "ILLUSTRATION", position: "center" }
+  { image: "assets/works013.jpg", title: "ARCHIVE 013 / CHARACTER DESIGN", category: "design", label: "CHARACTER DESIGN", position: "center" },
+  { image: "assets/works014.jpg", title: "ARCHIVE 014 / REFERENCE SHEET", category: "reference", label: "REFERENCE SHEET", position: "center" },
+  { image: "assets/works015.jpg", title: "ARCHIVE 015 / REFERENCE SHEET", category: "reference", label: "REFERENCE SHEET", position: "center" }
 ];
 
 const workGrid = document.getElementById('workGrid');
@@ -1688,7 +1695,9 @@ function renderWorks(){
   const list = filteredWorks();
   workGrid.innerHTML = '';
   list.forEach((work, index) => {
-    const archiveNumber = String(works.indexOf(work) + 1).padStart(2,'0');
+    const assetMatch = (work.image || '').match(/works(\d{3})\.(?:jpg|png|webp|mp4)$/i);
+    const archiveNumber3 = assetMatch ? assetMatch[1] : '';
+    const archiveNumber = archiveNumber3 ? archiveNumber3.slice(-2) : '';
     const card = document.createElement('article');
     card.className = `work-card${work.featured ? ' featured' : ''}${positionClass(work.position) ? ' ' + positionClass(work.position) : ''}`;
     card.dataset.cat = work.category;
@@ -1697,7 +1706,11 @@ function renderWorks(){
     const media = isVideo
       ? `<video src="${work.image}" muted loop playsinline preload="metadata" aria-label="${work.title}"></video>`
       : `<img src="${work.image}" alt="${work.title}">`;
-    card.innerHTML = `${media}<span class="work-number">${archiveNumber}</span><div class="work-meta"><b>ARCHIVE ${String(works.indexOf(work) + 1).padStart(3,'0')}</b><small>${work.label || work.category.toUpperCase()}</small></div>`;
+    const numberMarkup = archiveNumber3 ? `<span class="work-number">${archiveNumber}</span>` : '';
+    const metaMarkup = archiveNumber3
+      ? `<div class="work-meta"><b>ARCHIVE ${archiveNumber3}</b><small>${work.label || work.category.toUpperCase()}</small></div>`
+      : `<div class="work-meta"><b>PICKUP</b></div>`;
+    card.innerHTML = `${media}${numberMarkup}${metaMarkup}`;
     if(isVideo){
       const preview = card.querySelector('video');
       card.addEventListener('mouseenter',()=>preview.play().catch(()=>{}));
