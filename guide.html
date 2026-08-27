@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="ja">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="YøRha Client Transaction Guide">
-<meta name="theme-color" content="#111111">
-<link rel="icon" type="image/png" href="assets/favicon.png">
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="YøRha Client Transaction Guide" name="description"/>
+<meta content="#111111" name="theme-color"/>
+<link href="assets/favicon.png" rel="icon" type="image/png"/>
 <title>YøRha Client Guide</title>
 <style>
 :root{
@@ -327,168 +328,221 @@ header{
   .section-title{padding:16px}.section-body{padding:16px}
   .rule{grid-template-columns:1fr}.rule b{border-right:0;border-bottom:1px solid rgba(20,20,20,.12)}
 }
+
+.lang-switch{
+  margin-left:auto;
+  margin-right:22px;
+  display:flex;
+  align-items:center;
+  gap:7px;
+  font-size:10px;
+  letter-spacing:.12em;
+  color:#ffffff;
+  white-space:nowrap;
+}
+.lang-switch button{
+  appearance:none;
+  border:0;
+  padding:4px 2px;
+  background:transparent;
+  color:#ffffff;
+  opacity:.42;
+  cursor:pointer;
+  letter-spacing:.12em;
+}
+.lang-switch button.active{
+  opacity:1;
+  border-bottom:1px solid #ffffff;
+}
+.lang-switch span{opacity:.28}
+.header-meta{margin-left:0}
+html[lang="en"] .summary,
+html[lang="en"] .step p,
+html[lang="en"] .rule span,
+html[lang="en"] .flow-step small,
+html[lang="en"] .section-title p{
+  line-break:auto;
+}
+@media(max-width:640px){
+  .lang-switch{margin-left:auto;margin-right:0}
+}
 </style>
 </head>
 <body>
 <div class="noise"></div>
 <div class="scanline"></div>
-
 <header>
-  <a class="logo" href="#top">YøRha CLIENT GUIDE</a>
-  <div class="header-meta">
-    <span>TRANSACTION MANUAL / CLIENT USE</span>
-    <span>FROM INQUIRY TO AFTER DELIVERY</span>
-    <span class="header-guide-note">お取引開始前に本ガイドをご確認ください。</span>
-  </div>
+<a class="logo" href="#top">YøRha CLIENT GUIDE</a>
+<div aria-label="Language" class="lang-switch"><button class="active" data-lang-btn="ja" type="button">JP</button><span>/</span><button data-lang-btn="en" type="button">EN</button></div><div class="header-meta">
+<span>TRANSACTION MANUAL / CLIENT USE</span>
+<span>FROM INQUIRY TO AFTER DELIVERY</span>
+<span class="header-guide-note" data-en="Please review this guide before starting a transaction." data-ja="お取引開始前に本ガイドをご確認ください。">お取引開始前に本ガイドをご確認ください。</span>
+</div>
 </header>
-
 <main class="page" id="top">
 <div class="wrap">
-  <div class="layout">
-    <aside class="toc">
-      <div class="toc-head">GUIDE INDEX</div>
-      <a href="#s01"><strong>01 / INQUIRY</strong><small>お問い合わせ</small></a>
-      <a href="#s02"><strong>02 / ESTIMATE</strong><small>内容確認・見積</small></a>
-      <a href="#s03"><strong>03 / CONTRACT</strong><small>契約</small></a>
-      <a href="#s04"><strong>04 / PAYMENT</strong><small>お支払い</small></a>
-      <a href="#s05"><strong>05 / PREPARATION</strong><small>制作準備</small></a>
-      <a href="#s06"><strong>06 / PRODUCTION</strong><small>制作進行</small></a>
-      <a href="#s07"><strong>07 / DELIVERY</strong><small>納品</small></a>
-      <a href="#s08"><strong>08 / AFTER DELIVERY</strong><small>納品後</small></a>
-      <a href="#s09"><strong>09 / TRANSACTION END</strong><small>取引終了</small></a>
-      <a href="#swarn"><strong>⚠ / TROUBLE etc.</strong><small>トラブル・その他</small></a>
-    </aside>
-
-    <div class="main">
-
-      <section class="flow">
-        <div class="flow-title">
-          <h2>TRANSACTION FLOW</h2>
-          <span>OVERVIEW / 01—09 + ⚠</span>
-        </div>
-        <div class="flow-grid">
-          <a class="flow-step arrow-right" href="#s01"><b>01</b><strong>INQUIRY</strong><small>お問い合わせ・依頼内容提出</small></a>
-          <a class="flow-step arrow-right" href="#s02"><b>02</b><strong>ESTIMATE</strong><small>内容確認・見積・依頼検討</small></a>
-          <a class="flow-step arrow-right" href="#s03"><b>03</b><strong>CONTRACT</strong><small>契約内容確認・署名・締結</small></a>
-          <a class="flow-step" href="#s04"><b>04</b><strong>PAYMENT</strong><small>支払い・入金確認</small></a>
-          <a class="flow-step arrow-right" href="#s05"><b>05</b><strong>PREPARATION</strong><small>資料提出・仕様確定</small></a>
-          <a class="flow-step arrow-right" href="#s06"><b>06</b><strong>PRODUCTION</strong><small>制作進行・途中確認・完成確認</small></a>
-          <a class="flow-step arrow-right" href="#s07"><b>07</b><strong>DELIVERY</strong><small>データ納品・確認</small></a>
-          <a class="flow-step" href="#s08"><b>08</b><strong>AFTER DELIVERY</strong><small>納品後</small></a>
-          <a class="flow-step arrow-right" href="#s09"><b>09</b><strong>TRANSACTION END</strong><small>取引終了</small></a>
-          <a class="flow-step warning-flow" href="#swarn"><b>⚠</b><strong>CANCELLATION / TROUBLE</strong><small>キャンセル・進行トラブル</small></a>
-        </div>
-      </section>
-
-      <section class="section" id="s00">
-<div class="section-head"><div class="section-title"><h2>GUIDE</h2><p>このガイドの使い方</p></div><div class="section-tag">START HERE</div></div>
-<div class="section-body"><div class="summary">取引全体の流れ、各工程でYøRhaと依頼者が行うこと、確認事項、完了条件など、<br>お取引中の共通説明はこちらにまとめてあります。<br><br>お取引開始前に、当ページの全項目をご確認ください。<br>こちらにない個別事項やご不明点については、メッセージ等でお尋ねください。<br>個別に対応いたします。</div></div>
+<div class="layout">
+<aside class="toc">
+<div class="toc-head">GUIDE INDEX</div>
+<a href="#s01"><strong>01 / INQUIRY</strong><small data-en="Inquiry" data-ja="お問い合わせ">お問い合わせ</small></a>
+<a href="#s02"><strong>02 / ESTIMATE</strong><small data-en="Review &amp; Estimate" data-ja="内容確認・見積">内容確認・見積</small></a>
+<a href="#s03"><strong>03 / CONTRACT</strong><small data-en="Contract" data-ja="契約">契約</small></a>
+<a href="#s04"><strong>04 / PAYMENT</strong><small data-en="Payment" data-ja="お支払い">お支払い</small></a>
+<a href="#s05"><strong>05 / PREPARATION</strong><small data-en="Preparation" data-ja="制作準備">制作準備</small></a>
+<a href="#s06"><strong>06 / PRODUCTION</strong><small data-en="Production" data-ja="制作進行">制作進行</small></a>
+<a href="#s07"><strong>07 / DELIVERY</strong><small data-en="Delivery" data-ja="納品">納品</small></a>
+<a href="#s08"><strong>08 / AFTER DELIVERY</strong><small data-en="After Delivery" data-ja="納品後">納品後</small></a>
+<a href="#s09"><strong>09 / TRANSACTION END</strong><small data-en="Transaction End" data-ja="取引終了">取引終了</small></a>
+<a href="#swarn"><strong>⚠ / TROUBLE etc.</strong><small data-en="Trouble / Other" data-ja="トラブル・その他">トラブル・その他</small></a>
+</aside>
+<div class="main">
+<section class="flow">
+<div class="flow-title">
+<h2>TRANSACTION FLOW</h2>
+<span>OVERVIEW / 01—09 + ⚠</span>
+</div>
+<div class="flow-grid">
+<a class="flow-step arrow-right" href="#s01"><b>01</b><strong>INQUIRY</strong><small data-en="Inquiry / Submit Request Details" data-ja="お問い合わせ・依頼内容提出">お問い合わせ・依頼内容提出</small></a>
+<a class="flow-step arrow-right" href="#s02"><b>02</b><strong>ESTIMATE</strong><small data-en="Review / Estimate / Consider Commission" data-ja="内容確認・見積・依頼検討">内容確認・見積・依頼検討</small></a>
+<a class="flow-step arrow-right" href="#s03"><b>03</b><strong>CONTRACT</strong><small data-en="Review Contract / Sign / Execute" data-ja="契約内容確認・署名・締結">契約内容確認・署名・締結</small></a>
+<a class="flow-step" href="#s04"><b>04</b><strong>PAYMENT</strong><small data-en="Payment / Confirmation" data-ja="支払い・入金確認">支払い・入金確認</small></a>
+<a class="flow-step arrow-right" href="#s05"><b>05</b><strong>PREPARATION</strong><small data-en="Submit Materials / Finalize Specifications" data-ja="資料提出・仕様確定">資料提出・仕様確定</small></a>
+<a class="flow-step arrow-right" href="#s06"><b>06</b><strong>PRODUCTION</strong><small data-en="Production / Reviews / Final Check" data-ja="制作進行・途中確認・完成確認">制作進行・途中確認・完成確認</small></a>
+<a class="flow-step arrow-right" href="#s07"><b>07</b><strong>DELIVERY</strong><small data-en="File Delivery / Check" data-ja="データ納品・確認">データ納品・確認</small></a>
+<a class="flow-step" href="#s08"><b>08</b><strong>AFTER DELIVERY</strong><small data-en="After Delivery" data-ja="納品後">納品後</small></a>
+<a class="flow-step arrow-right" href="#s09"><b>09</b><strong>TRANSACTION END</strong><small data-en="Transaction End" data-ja="取引終了">取引終了</small></a>
+<a class="flow-step warning-flow" href="#swarn"><b>⚠</b><strong>CANCELLATION / TROUBLE</strong><small data-en="Cancellation / Production Issues" data-ja="キャンセル・進行トラブル">キャンセル・進行トラブル</small></a>
+</div>
 </section>
-
+<section class="section" id="s00">
+<div class="section-head"><div class="section-title"><h2>GUIDE</h2><p data-en="How to Use This Guide" data-ja="このガイドの使い方">このガイドの使い方</p></div><div class="section-tag">START HERE</div></div>
+<div class="section-body"><div class="summary" data-en="This guide summarizes the overall transaction flow, what YøRha and the client are expected to do at each stage, required checks, and completion criteria.&lt;br&gt;&lt;br&gt;Please review all sections of this page before starting a transaction.&lt;br&gt;If you have any questions or individual matters not covered here, please contact me by message.&lt;br&gt;They will be handled individually." data-ja="取引全体の流れ、各工程でYøRhaと依頼者が行うこと、確認事項、完了条件など、&lt;br/&gt;お取引中の共通説明はこちらにまとめてあります。&lt;br/&gt;&lt;br/&gt;お取引開始前に、当ページの全項目をご確認ください。&lt;br/&gt;こちらにない個別事項やご不明点については、メッセージ等でお尋ねください。&lt;br/&gt;個別に対応いたします。">取引全体の流れ、各工程でYøRhaと依頼者が行うこと、確認事項、完了条件など、<br/>お取引中の共通説明はこちらにまとめてあります。<br/><br/>お取引開始前に、当ページの全項目をご確認ください。<br/>こちらにない個別事項やご不明点については、メッセージ等でお尋ねください。<br/>個別に対応いたします。</div></div>
+</section>
 <section class="section" id="s01">
-<div class="section-head"><div class="section-no">01</div><div class="section-title"><h2>INQUIRY</h2><p>お問い合わせ</p></div><div class="section-tag">CONTACT</div></div>
-<div class="section-body"><div class="summary">制作内容・用途・予算・希望納期など、依頼可否を確認するために必要な情報をご提出ください。</div>
+<div class="section-head"><div class="section-no">01</div><div class="section-title"><h2>INQUIRY</h2><p data-en="Inquiry" data-ja="お問い合わせ">お問い合わせ</p></div><div class="section-tag">CONTACT</div></div>
+<div class="section-body"><div class="summary" data-en="Please provide the information necessary to determine whether the commission can be accepted, including the requested work, intended use, budget, and preferred deadline." data-ja="制作内容・用途・予算・希望納期など、依頼可否を確認するために必要な情報をご提出ください。">制作内容・用途・予算・希望納期など、依頼可否を確認するために必要な情報をご提出ください。</div>
 <div class="steps">
-<div class="step"><div class="step-top"><span class="step-id">01-1</span><h3>依頼内容の提出</h3></div><p>正式な回答にあたり、必要な情報があります。<br>お問い合わせ時点でわかる範囲で構いませんので、各項目の情報を添えてお問い合わせください。</p></div>
-<div class="step"><div class="step-top"><span class="step-id">INFO</span><h3>お問い合わせ時の必要情報</h3></div><p>✦ 制作内容（書き込み量が推し量れる程度）：<br>✦ 用途：<br>✦ 商用利用有無：<br>✦ 予算感：<br>✦ 希望納期：<br>✦ 資料添付：<br>✦ その他：</p></div>
+<div class="step"><div class="step-top"><span class="step-id">01-1</span><h3 data-en="Submit Request Details" data-ja="依頼内容の提出">依頼内容の提出</h3></div><p data-en="Certain information is required before I can provide a formal response.&lt;br&gt;Please include the following details to the extent known at the time of inquiry." data-ja="正式な回答にあたり、必要な情報があります。&lt;br/&gt;お問い合わせ時点でわかる範囲で構いませんので、各項目の情報を添えてお問い合わせください。">正式な回答にあたり、必要な情報があります。<br/>お問い合わせ時点でわかる範囲で構いませんので、各項目の情報を添えてお問い合わせください。</p></div>
+<div class="step"><div class="step-top"><span class="step-id">INFO</span><h3 data-en="Required Information for Inquiry" data-ja="お問い合わせ時の必要情報">お問い合わせ時の必要情報</h3></div><p data-en="✦ Requested work (enough detail to estimate the amount of rendering/detail required):&lt;br&gt;✦ Intended use:&lt;br&gt;✦ Commercial use: Yes / No&lt;br&gt;✦ Budget range:&lt;br&gt;✦ Preferred deadline:&lt;br&gt;✦ Reference materials:&lt;br&gt;✦ Other:" data-ja="✦ 制作内容（書き込み量が推し量れる程度）：&lt;br/&gt;✦ 用途：&lt;br/&gt;✦ 商用利用有無：&lt;br/&gt;✦ 予算感：&lt;br/&gt;✦ 希望納期：&lt;br/&gt;✦ 資料添付：&lt;br/&gt;✦ その他：">✦ 制作内容（書き込み量が推し量れる程度）：<br/>✦ 用途：<br/>✦ 商用利用有無：<br/>✦ 予算感：<br/>✦ 希望納期：<br/>✦ 資料添付：<br/>✦ その他：</p></div>
 </div>
-<div class="rule"><b>依頼者</b><span>必要情報・資料を添えて問合せ送信</span></div><div class="rule"><b>YøRha</b><span>内容確認・不足情報確認・受注可否判断</span></div><div class="rule"><b>正式回答</b><span>必要情報が揃い次第、正式に回答いたします。</span></div></div>
+<div class="rule"><b data-en="CLIENT" data-ja="依頼者">依頼者</b><span data-en="Send the inquiry with the required information and reference materials." data-ja="必要情報・資料を添えて問合せ送信">必要情報・資料を添えて問合せ送信</span></div><div class="rule"><b>YøRha</b><span data-en="Review the request, confirm missing information, and determine whether the commission can be accepted." data-ja="内容確認・不足情報確認・受注可否判断">内容確認・不足情報確認・受注可否判断</span></div><div class="rule"><b data-en="FORMAL RESPONSE" data-ja="正式回答">正式回答</b><span data-en="A formal response will be provided once the necessary information is complete." data-ja="必要情報が揃い次第、正式に回答いたします。">必要情報が揃い次第、正式に回答いたします。</span></div></div>
 </section>
-
 <section class="section" id="s02">
-<div class="section-head"><div class="section-no">02</div><div class="section-title"><h2>ESTIMATE</h2><p>内容確認・お見積り</p></div><div class="section-tag">QUOTE</div></div>
-<div class="section-body"><div class="summary">いただいた依頼内容をもとに、制作可否・料金・スケジュール・条件などを確認します。</div>
+<div class="section-head"><div class="section-no">02</div><div class="section-title"><h2>ESTIMATE</h2><p data-en="Review &amp; Estimate" data-ja="内容確認・お見積り">内容確認・お見積り</p></div><div class="section-tag">QUOTE</div></div>
+<div class="section-body"><div class="summary" data-en="Based on the submitted request details, I will review feasibility, pricing, schedule, deadline, and applicable conditions." data-ja="いただいた依頼内容をもとに、制作可否・料金・スケジュール・条件などを確認します。">いただいた依頼内容をもとに、制作可否・料金・スケジュール・条件などを確認します。</div>
 <div class="steps">
-<div class="step"><div class="step-top"><span class="step-id">02-1</span><h3>仕様整理</h3></div><p>いただいた情報をもとに、受注可能か整理・判断します。</p></div>
-<div class="step"><div class="step-top"><span class="step-id">02-2</span><h3>見積提示</h3></div><p>料金、スケジュール、納期、条件など、依頼に必要な内容をご案内します。</p></div>
-<div class="step"><div class="step-top"><span class="step-id">02-3</span><h3>ご依頼検討</h3></div><p>見積内容をご検討ください。<br>正式にご依頼いただく場合は、その旨をお知らせください。<br>ご依頼に至らない場合も必ずご連絡ください。</p></div>
+<div class="step"><div class="step-top"><span class="step-id">02-1</span><h3 data-en="Specification Review" data-ja="仕様整理">仕様整理</h3></div><p data-en="I will organize and review the submitted information to determine whether the commission can be accepted." data-ja="いただいた情報をもとに、受注可能か整理・判断します。">いただいた情報をもとに、受注可能か整理・判断します。</p></div>
+<div class="step"><div class="step-top"><span class="step-id">02-2</span><h3 data-en="Estimate" data-ja="見積提示">見積提示</h3></div><p data-en="I will provide the pricing, schedule, deadline, conditions, and other information necessary for the commission." data-ja="料金、スケジュール、納期、条件など、依頼に必要な内容をご案内します。">料金、スケジュール、納期、条件など、依頼に必要な内容をご案内します。</p></div>
+<div class="step"><div class="step-top"><span class="step-id">02-3</span><h3 data-en="Consider the Commission" data-ja="ご依頼検討">ご依頼検討</h3></div><p data-en="Please review the estimate.&lt;br&gt;If you would like to proceed formally, please let me know.&lt;br&gt;Please also contact me if you decide not to proceed." data-ja="見積内容をご検討ください。&lt;br/&gt;正式にご依頼いただく場合は、その旨をお知らせください。&lt;br/&gt;ご依頼に至らない場合も必ずご連絡ください。">見積内容をご検討ください。<br/>正式にご依頼いただく場合は、その旨をお知らせください。<br/>ご依頼に至らない場合も必ずご連絡ください。</p></div>
 </div></div>
 </section>
-
 <section class="section" id="s03">
-<div class="section-head"><div class="section-no">03</div><div class="section-title"><h2>CONTRACT</h2><p>契約</p></div><div class="section-tag">AGREEMENT</div></div>
-<div class="section-body"><div class="summary">ご依頼いただく際は、制作内容に応じた契約を締結します。</div>
+<div class="section-head"><div class="section-no">03</div><div class="section-title"><h2>CONTRACT</h2><p data-en="Contract" data-ja="契約">契約</p></div><div class="section-tag">AGREEMENT</div></div>
+<div class="section-body"><div class="summary" data-en="A contract appropriate to the scope of work will be executed when you proceed with the commission." data-ja="ご依頼いただく際は、制作内容に応じた契約を締結します。">ご依頼いただく際は、制作内容に応じた契約を締結します。</div>
 <div class="steps">
-<div class="step"><div class="step-top"><span class="step-id">03-1</span><h3>契約書送付</h3></div><p>ご依頼確定後、制作内容に応じて「イラスト制作業務委託契約書」または「モデル制作業務委託契約書」を、ご指定のメールアドレス宛にお届けします。</p></div>
-<div class="step"><div class="step-top"><span class="step-id">03-2</span><h3>契約内容確認・署名</h3></div><p>契約内容をすべてご確認のうえ、問題がなければ署名・返送してください。不明点がある場合は、署名・返送前に必ずご確認ください。</p></div>
-<div class="step"><div class="step-top"><span class="step-id">03-3</span><h3>契約締結</h3></div><p>署名済みの制作業務委託契約書が返送され、当方へ届き次第、契約締結完了となります。</p></div>
+<div class="step"><div class="step-top"><span class="step-id">03-1</span><h3 data-en="Contract Sent" data-ja="契約書送付">契約書送付</h3></div><p data-en="Once the commission is confirmed, either an “Illustration Production Service Agreement” or a “Model Production Service Agreement,” as applicable to the work, will be sent to your designated email address." data-ja="ご依頼確定後、制作内容に応じて「イラスト制作業務委託契約書」または「モデル制作業務委託契約書」を、ご指定のメールアドレス宛にお届けします。">ご依頼確定後、制作内容に応じて「イラスト制作業務委託契約書」または「モデル制作業務委託契約書」を、ご指定のメールアドレス宛にお届けします。</p></div>
+<div class="step"><div class="step-top"><span class="step-id">03-2</span><h3 data-en="Review &amp; Sign Contract" data-ja="契約内容確認・署名">契約内容確認・署名</h3></div><p data-en="Please review the entire contract and, if there are no issues, sign and return it. If you have any questions, please ask before signing and returning the contract." data-ja="契約内容をすべてご確認のうえ、問題がなければ署名・返送してください。不明点がある場合は、署名・返送前に必ずご確認ください。">契約内容をすべてご確認のうえ、問題がなければ署名・返送してください。不明点がある場合は、署名・返送前に必ずご確認ください。</p></div>
+<div class="step"><div class="step-top"><span class="step-id">03-3</span><h3 data-en="Contract Execution" data-ja="契約締結">契約締結</h3></div><p data-en="The contract is considered executed once the signed production service agreement has been returned and received by YøRha." data-ja="署名済みの制作業務委託契約書が返送され、当方へ届き次第、契約締結完了となります。">署名済みの制作業務委託契約書が返送され、当方へ届き次第、契約締結完了となります。</p></div>
 </div></div>
 </section>
-
 <section class="section" id="s04">
-<div class="section-head"><div class="section-no">04</div><div class="section-title"><h2>PAYMENT</h2><p>お支払い</p></div><div class="section-tag"></div></div>
-<div class="section-body"><div class="summary">制作費は原則前金制です。<br><br>契約締結後、制作費をお支払いください。入金確認後に、正式に制作スケジュールを確保します。<br>また、具体的なデザイン提案や方向性の打ち合わせ・ご相談は制作工程に含まれるため、ご入金確認後から対応可能です。</div>
+<div class="section-head"><div class="section-no">04</div><div class="section-title"><h2>PAYMENT</h2><p data-en="Payment" data-ja="お支払い">お支払い</p></div><div class="section-tag"></div></div>
+<div class="section-body"><div class="summary" data-en="Production fees are generally paid in advance.&lt;br&gt;&lt;br&gt;After the contract is executed, please pay the production fee. The production schedule will be formally reserved after payment is confirmed.&lt;br&gt;Detailed design proposals, direction discussions, and consultations are part of the production process and therefore become available after payment has been confirmed." data-ja="制作費は原則前金制です。&lt;br/&gt;&lt;br/&gt;契約締結後、制作費をお支払いください。入金確認後に、正式に制作スケジュールを確保します。&lt;br/&gt;また、具体的なデザイン提案や方向性の打ち合わせ・ご相談は制作工程に含まれるため、ご入金確認後から対応可能です。">制作費は原則前金制です。<br/><br/>契約締結後、制作費をお支払いください。入金確認後に、正式に制作スケジュールを確保します。<br/>また、具体的なデザイン提案や方向性の打ち合わせ・ご相談は制作工程に含まれるため、ご入金確認後から対応可能です。</div>
 <div class="steps">
-<div class="step"><div class="step-top"><span class="step-id">04-1</span><h3>支払い方法</h3></div><p>銀行振込、またはクレジットカード（分割払い含）・Apple Pay・PayPay・Linkの中から、希望のお支払い方法をお知らせください。<br>※PayPayについて：当方は承認を受けていますので規約違反には該当しません。</p></div>
-<div class="step"><div class="step-top"><span class="step-id">04-2</span><h3>支払い手続き</h3></div><p><strong>銀行振込：</strong> 振込先情報をご案内します。<br><strong>オンライン決済：</strong> 専用の決済リンクを個別にご案内します。</p></div>
-<div class="step"><div class="step-top"><span class="step-id">04-3</span><h3>入金確認</h3></div><p>着金確認後、正式に制作スケジュールを確保します。<br>オンライン決済の場合システムの都合上、確認までに数日を要します。</p></div>
-<div class="step"><div class="step-top"><span class="step-id">04-4</span><h3>制作案内</h3></div><p>当初ご案内済みの制作開始時期までお待ちください。<br>スケジュールに変更がある場合や制作開始時には、改めてご連絡いたします。</p></div>
-</div><div class="rule"><b>注意</b><span>お支払い時の手数料等は、ご依頼者様の負担となります。</span></div></div>
+<div class="step"><div class="step-top"><span class="step-id">04-1</span><h3 data-en="Payment Method" data-ja="支払い方法">支払い方法</h3></div><p data-en="Please select your preferred payment method from bank transfer, credit card (including installment payments), Apple Pay, PayPay, or Link.&lt;br&gt;※ PayPay: YøRha has received the required approval, so this use does not violate PayPay's terms." data-ja="銀行振込、またはクレジットカード（分割払い含）・Apple Pay・PayPay・Linkの中から、希望のお支払い方法をお知らせください。&lt;br/&gt;※PayPayについて：当方は承認を受けていますので規約違反には該当しません。">銀行振込、またはクレジットカード（分割払い含）・Apple Pay・PayPay・Linkの中から、希望のお支払い方法をお知らせください。<br/>※PayPayについて：当方は承認を受けていますので規約違反には該当しません。</p></div>
+<div class="step"><div class="step-top"><span class="step-id">04-2</span><h3 data-en="Payment Procedure" data-ja="支払い手続き">支払い手続き</h3></div><p data-en="&lt;strong&gt;Bank transfer:&lt;/strong&gt; Bank account information will be provided.&lt;br&gt;&lt;strong&gt;Online payment:&lt;/strong&gt; A dedicated payment link will be provided individually." data-ja="&lt;strong&gt;銀行振込：&lt;/strong&gt; 振込先情報をご案内します。&lt;br/&gt;&lt;strong&gt;オンライン決済：&lt;/strong&gt; 専用の決済リンクを個別にご案内します。"><strong>銀行振込：</strong> 振込先情報をご案内します。<br/><strong>オンライン決済：</strong> 専用の決済リンクを個別にご案内します。</p></div>
+<div class="step"><div class="step-top"><span class="step-id">04-3</span><h3 data-en="Payment Confirmation" data-ja="入金確認">入金確認</h3></div><p data-en="The production schedule will be formally reserved after receipt of funds is confirmed.&lt;br&gt;For online payments, confirmation may take several days due to the payment system." data-ja="着金確認後、正式に制作スケジュールを確保します。&lt;br/&gt;オンライン決済の場合システムの都合上、確認までに数日を要します。">着金確認後、正式に制作スケジュールを確保します。<br/>オンライン決済の場合システムの都合上、確認までに数日を要します。</p></div>
+<div class="step"><div class="step-top"><span class="step-id">04-4</span><h3 data-en="Production Schedule Notice" data-ja="制作案内">制作案内</h3></div><p data-en="Please wait until the production start period previously communicated to you.&lt;br&gt;If the schedule changes or production begins, I will contact you again." data-ja="当初ご案内済みの制作開始時期までお待ちください。&lt;br/&gt;スケジュールに変更がある場合や制作開始時には、改めてご連絡いたします。">当初ご案内済みの制作開始時期までお待ちください。<br/>スケジュールに変更がある場合や制作開始時には、改めてご連絡いたします。</p></div>
+</div><div class="rule"><b data-en="NOTE" data-ja="注意">注意</b><span data-en="Any fees incurred at the time of payment are the responsibility of the client." data-ja="お支払い時の手数料等は、ご依頼者様の負担となります。">お支払い時の手数料等は、ご依頼者様の負担となります。</span></div></div>
 </section>
-
 <section class="section" id="s05">
-<div class="section-head"><div class="section-no">05</div><div class="section-title"><h2>PREPARATION</h2><p>制作準備</p></div><div class="section-tag">SETUP</div></div>
-<div class="section-body"><div class="summary">制作開始前に、資料・仕様・連絡方法・制作条件を整理します。</div>
+<div class="section-head"><div class="section-no">05</div><div class="section-title"><h2>PREPARATION</h2><p data-en="Preparation" data-ja="制作準備">制作準備</p></div><div class="section-tag">SETUP</div></div>
+<div class="section-body"><div class="summary" data-en="Before production begins, we will organize the materials, specifications, communication method, and production conditions." data-ja="制作開始前に、資料・仕様・連絡方法・制作条件を整理します。">制作開始前に、資料・仕様・連絡方法・制作条件を整理します。</div>
 <div class="steps">
-<div class="step"><div class="step-top"><span class="step-id">05-1</span><h3>資料提出・ヒアリング</h3></div><p><strong>A ✦ モデル制作：</strong><br>専用スプレッドシートに必要な設定資料・参考画像・テキスト情報等をご入力のうえ、共有してください。ご希望の場合は、お取引用の専用Discordサーバーをご用意いたします。<br><br><strong>B ✦ モデル以外の制作：</strong><br>設定資料、参考画像、テキスト情報、デザイン希望や用途など、必要な表現についてお知らせください。</p></div>
-<div class="step"><div class="step-top"><span class="step-id">05-2</span><h3>仕様確定</h3></div><p>制作開始後の仕様変更などが発生しないよう最終確認を行います。<br>基本的に、着手後の描写仕様変更や追加等はお受けしていません。</p></div>
+<div class="step"><div class="step-top"><span class="step-id">05-1</span><h3 data-en="Submit Materials / Consultation" data-ja="資料提出・ヒアリング">資料提出・ヒアリング</h3></div><p data-en="&lt;strong&gt;A ✦ MODEL PRODUCTION:&lt;/strong&gt;&lt;br&gt;Please enter the required setting materials, reference images, text information, and other necessary details in the dedicated spreadsheet and share it. If requested, a dedicated Discord server for the transaction can also be provided.&lt;br&gt;&lt;br&gt;&lt;strong&gt;B ✦ NON-MODEL PRODUCTION:&lt;/strong&gt;&lt;br&gt;Please provide the setting materials, reference images, text information, design preferences, intended use, and other details necessary for the requested expression." data-ja="&lt;strong&gt;A ✦ モデル制作：&lt;/strong&gt;&lt;br/&gt;専用スプレッドシートに必要な設定資料・参考画像・テキスト情報等をご入力のうえ、共有してください。ご希望の場合は、お取引用の専用Discordサーバーをご用意いたします。&lt;br/&gt;&lt;br/&gt;&lt;strong&gt;B ✦ モデル以外の制作：&lt;/strong&gt;&lt;br/&gt;設定資料、参考画像、テキスト情報、デザイン希望や用途など、必要な表現についてお知らせください。"><strong>A ✦ モデル制作：</strong><br/>専用スプレッドシートに必要な設定資料・参考画像・テキスト情報等をご入力のうえ、共有してください。ご希望の場合は、お取引用の専用Discordサーバーをご用意いたします。<br/><br/><strong>B ✦ モデル以外の制作：</strong><br/>設定資料、参考画像、テキスト情報、デザイン希望や用途など、必要な表現についてお知らせください。</p></div>
+<div class="step"><div class="step-top"><span class="step-id">05-2</span><h3 data-en="Finalize Specifications" data-ja="仕様確定">仕様確定</h3></div><p data-en="A final check will be conducted to avoid specification changes after production begins.&lt;br&gt;As a general rule, changes or additions to the requested depiction/specifications are not accepted after work has started." data-ja="制作開始後の仕様変更などが発生しないよう最終確認を行います。&lt;br/&gt;基本的に、着手後の描写仕様変更や追加等はお受けしていません。">制作開始後の仕様変更などが発生しないよう最終確認を行います。<br/>基本的に、着手後の描写仕様変更や追加等はお受けしていません。</p></div>
 </div></div>
 </section>
-
 <section class="section" id="s06">
-<div class="section-head"><div class="section-no">06</div><div class="section-title"><h2>PRODUCTION</h2><p>制作進行</p></div><div class="section-tag">WORKFLOW</div></div>
-<div class="section-body"><div class="summary">案件ごとの制作工程に沿って制作・確認を進めます。</div>
+<div class="section-head"><div class="section-no">06</div><div class="section-title"><h2>PRODUCTION</h2><p data-en="Production" data-ja="制作進行">制作進行</p></div><div class="section-tag">WORKFLOW</div></div>
+<div class="section-body"><div class="summary" data-en="Production and review will proceed according to the workflow for the applicable commission." data-ja="案件ごとの制作工程に沿って制作・確認を進めます。">案件ごとの制作工程に沿って制作・確認を進めます。</div>
 <div class="steps">
-<div class="step"><div class="step-top"><span class="step-id">06-1</span><h3>制作開始</h3></div><p>制作着手時に、改めてご連絡いたします。</p></div>
-<div class="step"><div class="step-top"><span class="step-id">06-2</span><div class="step-heading-wrap"><h3>制作工程</h3><small>（イラストとLive2Dでは工程が異なります）</small></div></div><p><strong>A ✦ ILLUSTRATION</strong><br>　構図ラフ or カラーラフ <span class="flow-unit">→確認</span> <span class="flow-unit">→清書</span> <span class="flow-unit">→確認</span> <span class="flow-unit"><span class="flow-unit">→完成</span>納品</span><br><br><strong>B ✦ Live2D MODEL</strong><br><strong>① 立ち絵制作</strong>　構図ラフorカラーラフ <span class="flow-unit">→確認</span> <span class="flow-unit">→清書</span> <span class="flow-unit">→確認</span> <span class="flow-unit">→完成</span> <span class="flow-unit">→立ち絵納品</span><br><strong>② 立ち絵パーツ分け</strong><br><strong>③ モデリング</strong>　着手 <span class="flow-unit">→完成</span> <span class="flow-unit">→動作録画動画にて動作確認</span> <span class="flow-unit">→完成</span> <span class="flow-unit">→Live2Dモデル納品</span> <span class="flow-unit">→全工程完了</span></p></div>
+<div class="step"><div class="step-top"><span class="step-id">06-1</span><h3 data-en="Production Start" data-ja="制作開始">制作開始</h3></div><p data-en="I will contact you again when production begins." data-ja="制作着手時に、改めてご連絡いたします。">制作着手時に、改めてご連絡いたします。</p></div>
+<div class="step"><div class="step-top"><span class="step-id">06-2</span><div class="step-heading-wrap"><h3 data-en="Production Workflow" data-ja="制作工程">制作工程</h3><small data-en="(The workflow differs between illustration and Live2D.)" data-ja="（イラストとLive2Dでは工程が異なります）">（イラストとLive2Dでは工程が異なります）</small></div></div><p data-en='&lt;strong&gt;A ✦ ILLUSTRATION&lt;/strong&gt;&lt;br&gt;Composition rough or color rough &lt;span class="flow-unit"&gt;→ Review&lt;/span&gt; &lt;span class="flow-unit"&gt;→ Final rendering&lt;/span&gt; &lt;span class="flow-unit"&gt;→ Review&lt;/span&gt; &lt;span class="flow-unit"&gt;→ Completion / Delivery&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;B ✦ Live2D MODEL&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;① Character Illustration&lt;/strong&gt; Composition rough or color rough &lt;span class="flow-unit"&gt;→ Review&lt;/span&gt; &lt;span class="flow-unit"&gt;→ Final rendering&lt;/span&gt; &lt;span class="flow-unit"&gt;→ Review&lt;/span&gt; &lt;span class="flow-unit"&gt;→ Completion&lt;/span&gt; &lt;span class="flow-unit"&gt;→ Character illustration delivery&lt;/span&gt;&lt;br&gt;&lt;strong&gt;② Layer Separation&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;③ Rigging&lt;/strong&gt; Start &lt;span class="flow-unit"&gt;→ Completion&lt;/span&gt; &lt;span class="flow-unit"&gt;→ Motion check via recorded video&lt;/span&gt; &lt;span class="flow-unit"&gt;→ Completion&lt;/span&gt; &lt;span class="flow-unit"&gt;→ Live2D model delivery&lt;/span&gt; &lt;span class="flow-unit"&gt;→ All production stages complete&lt;/span&gt;' data-ja='&lt;strong&gt;A ✦ ILLUSTRATION&lt;/strong&gt;&lt;br/&gt;　構図ラフ or カラーラフ &lt;span class="flow-unit"&gt;→確認&lt;/span&gt; &lt;span class="flow-unit"&gt;→清書&lt;/span&gt; &lt;span class="flow-unit"&gt;→確認&lt;/span&gt; &lt;span class="flow-unit"&gt;&lt;span class="flow-unit"&gt;→完成&lt;/span&gt;納品&lt;/span&gt;&lt;br/&gt;&lt;br/&gt;&lt;strong&gt;B ✦ Live2D MODEL&lt;/strong&gt;&lt;br/&gt;&lt;strong&gt;① 立ち絵制作&lt;/strong&gt;　構図ラフorカラーラフ &lt;span class="flow-unit"&gt;→確認&lt;/span&gt; &lt;span class="flow-unit"&gt;→清書&lt;/span&gt; &lt;span class="flow-unit"&gt;→確認&lt;/span&gt; &lt;span class="flow-unit"&gt;→完成&lt;/span&gt; &lt;span class="flow-unit"&gt;→立ち絵納品&lt;/span&gt;&lt;br/&gt;&lt;strong&gt;② 立ち絵パーツ分け&lt;/strong&gt;&lt;br/&gt;&lt;strong&gt;③ モデリング&lt;/strong&gt;　着手 &lt;span class="flow-unit"&gt;→完成&lt;/span&gt; &lt;span class="flow-unit"&gt;→動作録画動画にて動作確認&lt;/span&gt; &lt;span class="flow-unit"&gt;→完成&lt;/span&gt; &lt;span class="flow-unit"&gt;→Live2Dモデル納品&lt;/span&gt; &lt;span class="flow-unit"&gt;→全工程完了&lt;/span&gt;'><strong>A ✦ ILLUSTRATION</strong><br/>　構図ラフ or カラーラフ <span class="flow-unit">→確認</span> <span class="flow-unit">→清書</span> <span class="flow-unit">→確認</span> <span class="flow-unit"><span class="flow-unit">→完成</span>納品</span><br/><br/><strong>B ✦ Live2D MODEL</strong><br/><strong>① 立ち絵制作</strong>　構図ラフorカラーラフ <span class="flow-unit">→確認</span> <span class="flow-unit">→清書</span> <span class="flow-unit">→確認</span> <span class="flow-unit">→完成</span> <span class="flow-unit">→立ち絵納品</span><br/><strong>② 立ち絵パーツ分け</strong><br/><strong>③ モデリング</strong>　着手 <span class="flow-unit">→完成</span> <span class="flow-unit">→動作録画動画にて動作確認</span> <span class="flow-unit">→完成</span> <span class="flow-unit">→Live2Dモデル納品</span> <span class="flow-unit">→全工程完了</span></p></div>
 </div>
-<div class="rule rule-major"><b>✦ 確認工程</b><span>YøRhaから確認物を提出 → 依頼者が確認 → 必要に応じて修正 → 工程確定 → 次工程へ</span></div>
-<div class="rule rule-major"><b>✦ 修正</b><span>・各工程につき、修正回数は原則2回以内です。<br>・ご要望はできるだけまとめてお伝えください。<br>・修正内容は、希望する仕上がりが分かるよう具体的にお伝えください。<br>・小出しおよび後出しでのご要望はお控えください。<br>・後戻り修正は原則お受けしておりません。必要な場合は、追加料金にてご相談となります。</span></div></div>
+<div class="rule rule-major"><b data-en="✦ REVIEW PROCESS" data-ja="✦ 確認工程">✦ 確認工程</b><span data-en="YøRha submits work for review → Client reviews → Revisions if necessary → Stage approved → Proceed to next stage" data-ja="YøRhaから確認物を提出 → 依頼者が確認 → 必要に応じて修正 → 工程確定 → 次工程へ">YøRhaから確認物を提出 → 依頼者が確認 → 必要に応じて修正 → 工程確定 → 次工程へ</span></div>
+<div class="rule rule-major"><b data-en="✦ REVISIONS" data-ja="✦ 修正">✦ 修正</b><span data-en="・As a general rule, revisions are limited to two rounds per production stage.&lt;br&gt;・Please consolidate your requests as much as possible.&lt;br&gt;・Describe requested revisions specifically enough to make the desired result clear.&lt;br&gt;・Please avoid submitting requests piecemeal or adding them after the fact.&lt;br&gt;・Revisions that require returning to a previous production stage are generally not accepted. If necessary, they will be discussed as additional paid work." data-ja="・各工程につき、修正回数は原則2回以内です。&lt;br/&gt;・ご要望はできるだけまとめてお伝えください。&lt;br/&gt;・修正内容は、希望する仕上がりが分かるよう具体的にお伝えください。&lt;br/&gt;・小出しおよび後出しでのご要望はお控えください。&lt;br/&gt;・後戻り修正は原則お受けしておりません。必要な場合は、追加料金にてご相談となります。">・各工程につき、修正回数は原則2回以内です。<br/>・ご要望はできるだけまとめてお伝えください。<br/>・修正内容は、希望する仕上がりが分かるよう具体的にお伝えください。<br/>・小出しおよび後出しでのご要望はお控えください。<br/>・後戻り修正は原則お受けしておりません。必要な場合は、追加料金にてご相談となります。</span></div></div>
 </section>
-
 <section class="section" id="s07">
-<div class="section-head"><div class="section-no">07</div><div class="section-title"><h2>DELIVERY</h2><p>納品</p></div><div class="section-tag">FILE DELIVERY</div></div>
-<div class="section-body"><div class="summary">案件で合意した形式・内容の納品データをお渡しします。</div>
+<div class="section-head"><div class="section-no">07</div><div class="section-title"><h2>DELIVERY</h2><p data-en="Delivery" data-ja="納品">納品</p></div><div class="section-tag">FILE DELIVERY</div></div>
+<div class="section-body"><div class="summary" data-en="The final deliverables will be provided in the format and content agreed upon for the commission." data-ja="案件で合意した形式・内容の納品データをお渡しします。">案件で合意した形式・内容の納品データをお渡しします。</div>
 <div class="steps">
-<div class="step"><div class="step-top"><span class="step-id">07-1</span><h3>納品データ作成</h3></div><p>最終データを整理し、納品形式へ書き出します。</p></div>
-<div class="step"><div class="step-top"><span class="step-id">07-2</span><h3>データ送付</h3></div><p>指定の方法で納品データをお渡しします。</p></div>
+<div class="step"><div class="step-top"><span class="step-id">07-1</span><h3 data-en="Prepare Deliverables" data-ja="納品データ作成">納品データ作成</h3></div><p data-en="The final data will be organized and exported in the agreed delivery format." data-ja="最終データを整理し、納品形式へ書き出します。">最終データを整理し、納品形式へ書き出します。</p></div>
+<div class="step"><div class="step-top"><span class="step-id">07-2</span><h3 data-en="Send Deliverables" data-ja="データ送付">データ送付</h3></div><p data-en="The deliverable data will be provided using the designated method." data-ja="指定の方法で納品データをお渡しします。">指定の方法で納品データをお渡しします。</p></div>
 </div>
-<div class="rule"><b>納品形式</b><span>案件ごとの契約・見積・仕様に基づきます。</span></div>
-<div class="rule"><b>編集データ</b><span>PSD / cmo3等は納品対象外です。</span></div>
-<div class="rule"><b>著作権</b><span>著作権の譲渡は行っておりません。利用許諾（利用ライセンスの付与）となります。</span></div></div>
+<div class="rule"><b data-en="DELIVERY FORMAT" data-ja="納品形式">納品形式</b><span data-en="Based on the contract, estimate, and specifications for each commission." data-ja="案件ごとの契約・見積・仕様に基づきます。">案件ごとの契約・見積・仕様に基づきます。</span></div>
+<div class="rule"><b data-en="EDITABLE FILES" data-ja="編集データ">編集データ</b><span data-en="PSD, cmo3, and other editable/source files are not included in the deliverables." data-ja="PSD / cmo3等は納品対象外です。">PSD / cmo3等は納品対象外です。</span></div>
+<div class="rule"><b data-en="COPYRIGHT" data-ja="著作権">著作権</b><span data-en="Copyright is not transferred. The client receives permission to use the work (a usage license)." data-ja="著作権の譲渡は行っておりません。利用許諾（利用ライセンスの付与）となります。">著作権の譲渡は行っておりません。利用許諾（利用ライセンスの付与）となります。</span></div></div>
 </section>
-
 <section class="section" id="s08">
-<div class="section-head"><div class="section-no">08</div><div class="section-title"><h2>AFTER DELIVERY</h2><p>納品後</p></div><div class="section-tag">POST DELIVERY</div></div>
-<div class="section-body"><div class="summary">納品後の不具合等について。</div>
+<div class="section-head"><div class="section-no">08</div><div class="section-title"><h2>AFTER DELIVERY</h2><p data-en="After Delivery" data-ja="納品後">納品後</p></div><div class="section-tag">POST DELIVERY</div></div>
+<div class="section-body"><div class="summary" data-en="Regarding defects or other issues discovered after delivery." data-ja="納品後の不具合等について。">納品後の不具合等について。</div>
 <div class="steps">
-<div class="step"><div class="step-top"><span class="step-id">08-1</span><h3>納品データ確認</h3></div><p>データ不備や不足がないか、納品内容はお早めにご確認ください。</p></div>
-<div class="step"><div class="step-top"><span class="step-id">08-2</span><h3>不具合連絡</h3></div><p>作者側の不備と思われる問題がある場合は、内容が分かる状態でご連絡ください。<br>お申し出の有効期間は、納品日から起算し30日間とします。<br>有効期間以降は当方不備の場合でも対応いたしかねます。</p></div>
+<div class="step"><div class="step-top"><span class="step-id">08-1</span><h3 data-en="Check Delivered Data" data-ja="納品データ確認">納品データ確認</h3></div><p data-en="Please check the delivered contents promptly for missing or defective data." data-ja="データ不備や不足がないか、納品内容はお早めにご確認ください。">データ不備や不足がないか、納品内容はお早めにご確認ください。</p></div>
+<div class="step"><div class="step-top"><span class="step-id">08-2</span><h3 data-en="Report a Problem" data-ja="不具合連絡">不具合連絡</h3></div><p data-en="If you believe there is an issue caused by the creator, please contact me with enough information to identify the problem.&lt;br&gt;The valid period for reporting such issues is 30 days from the delivery date.&lt;br&gt;After this period, I cannot provide support even if the issue is attributable to YøRha." data-ja="作者側の不備と思われる問題がある場合は、内容が分かる状態でご連絡ください。&lt;br/&gt;お申し出の有効期間は、納品日から起算し30日間とします。&lt;br/&gt;有効期間以降は当方不備の場合でも対応いたしかねます。">作者側の不備と思われる問題がある場合は、内容が分かる状態でご連絡ください。<br/>お申し出の有効期間は、納品日から起算し30日間とします。<br/>有効期間以降は当方不備の場合でも対応いたしかねます。</p></div>
 </div></div>
 </section>
-
 <section class="section" id="s09">
-<div class="section-head"><div class="section-no">09</div><div class="section-title"><h2>TRANSACTION END</h2><p>取引終了</p></div><div class="section-tag">CLOSE</div></div>
-<div class="section-body"><div class="summary">納品・受領確認後の取引終了と、その後の利用・権利関係・お問い合わせについて。</div>
+<div class="section-head"><div class="section-no">09</div><div class="section-title"><h2>TRANSACTION END</h2><p data-en="Transaction End" data-ja="取引終了">取引終了</p></div><div class="section-tag">CLOSE</div></div>
+<div class="section-body"><div class="summary" data-en="Information about the end of the transaction after delivery and receipt confirmation, as well as subsequent use, rights, and inquiries." data-ja="納品・受領確認後の取引終了と、その後の利用・権利関係・お問い合わせについて。">納品・受領確認後の取引終了と、その後の利用・権利関係・お問い合わせについて。</div>
 <div class="steps">
-<div class="step"><div class="step-top"><span class="step-id">09-1</span><h3>取引完了</h3></div><p>必要な納品と確認が完了した時点で、制作取引を完了とします。</p></div>
-<div class="step"><div class="step-top"><span class="step-id">09-2</span><h3>取引後の利用</h3></div><p>取引終了後も、契約・利用規約に基づき、利用条件や禁止事項などは継続します。</p></div>
-<div class="step"><div class="step-top"><span class="step-id">09-3</span><h3>再依頼</h3></div><p>追加制作や新規案件は、改めてご相談ください。</p></div>
+<div class="step"><div class="step-top"><span class="step-id">09-1</span><h3 data-en="Transaction Complete" data-ja="取引完了">取引完了</h3></div><p data-en="The production transaction is considered complete once all required delivery and confirmation steps have been completed." data-ja="必要な納品と確認が完了した時点で、制作取引を完了とします。">必要な納品と確認が完了した時点で、制作取引を完了とします。</p></div>
+<div class="step"><div class="step-top"><span class="step-id">09-2</span><h3 data-en="Use After Transaction" data-ja="取引後の利用">取引後の利用</h3></div><p data-en="After the transaction ends, usage conditions, prohibited uses, and other obligations under the contract and Terms of Service remain in effect." data-ja="取引終了後も、契約・利用規約に基づき、利用条件や禁止事項などは継続します。">取引終了後も、契約・利用規約に基づき、利用条件や禁止事項などは継続します。</p></div>
+<div class="step"><div class="step-top"><span class="step-id">09-3</span><h3 data-en="Additional / New Commission" data-ja="再依頼">再依頼</h3></div><p data-en="Please contact me separately for additional production or a new commission." data-ja="追加制作や新規案件は、改めてご相談ください。">追加制作や新規案件は、改めてご相談ください。</p></div>
 </div></div>
 </section>
-
 <section class="section" id="swarn">
-<div class="section-head"><div class="section-no warning-no">⚠</div><div class="section-title"><h2>CANCELLATION / TROUBLE</h2><p>キャンセル・進行トラブル</p></div><div class="section-tag">EXCEPTION</div></div>
-<div class="section-body"><div class="summary">キャンセル・返金・取引上のトラブル等の対応については、契約書にそれぞれ記載されています。必ずご確認ください。</div></div>
+<div class="section-head"><div class="section-no warning-no">⚠</div><div class="section-title"><h2>CANCELLATION / TROUBLE</h2><p data-en="Cancellation / Production Issues" data-ja="キャンセル・進行トラブル">キャンセル・進行トラブル</p></div><div class="section-tag">EXCEPTION</div></div>
+<div class="section-body"><div class="summary" data-en="Procedures regarding cancellation, refunds, transaction-related issues, and similar matters are specified in the applicable contract. Please review the contract carefully." data-ja="キャンセル・返金・取引上のトラブル等の対応については、契約書にそれぞれ記載されています。必ずご確認ください。">キャンセル・返金・取引上のトラブル等の対応については、契約書にそれぞれ記載されています。必ずご確認ください。</div></div>
 </section>
-
 <footer class="site-footer">
-  <div class="site-footer-copy">© YøRha. All rights reserved.</div>
-  <div class="site-footer-note">False claims of authorship, unauthorized reproduction or redistribution, and use for AI training are strictly prohibited.</div>
+<div class="site-footer-copy">© YøRha. All rights reserved.</div>
+<div class="site-footer-note">False claims of authorship, unauthorized reproduction or redistribution, and use for AI training are strictly prohibited.</div>
 </footer>
-    </div>
-  </div>
+</div>
+</div>
 </div>
 </main>
-</body>
+<script>
+(function(){
+  const nodes = document.querySelectorAll('[data-ja][data-en]');
+  const buttons = document.querySelectorAll('[data-lang-btn]');
+
+  function setLanguage(lang){
+    const useLang = lang === 'en' ? 'en' : 'ja';
+    document.documentElement.lang = useLang;
+    nodes.forEach(function(el){
+      el.innerHTML = el.dataset[useLang];
+    });
+    buttons.forEach(function(btn){
+      btn.classList.toggle('active', btn.dataset.langBtn === useLang);
+      btn.setAttribute('aria-pressed', btn.dataset.langBtn === useLang ? 'true' : 'false');
+    });
+    try { localStorage.setItem('yorha-client-guide-lang', useLang); } catch(e) {}
+  }
+
+  buttons.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      setLanguage(btn.dataset.langBtn);
+    });
+  });
+
+  let initial = 'ja';
+  try {
+    const saved = localStorage.getItem('yorha-client-guide-lang');
+    if(saved === 'ja' || saved === 'en') initial = saved;
+  } catch(e) {}
+  setLanguage(initial);
+})();
+</script></body>
 </html>
