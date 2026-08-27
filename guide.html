@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="YøRha Client Transaction Guide">
+<meta name="theme-color" content="#111111">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<title>YøRha Client Guide</title>
+<style>
+:root{
+  --black:#111;
+  --black2:#171717;
+  --paper:#e9e4dc;
+  --paper2:#ddd6ca;
+  --ink:#171717;
+  --white:#eee8dd;
+  --line-dark:rgba(255,255,255,.16);
+  --line-light:rgba(20,20,20,.22);
+  --accent:#b8aa8e;
+  --muted:#756f65;
+  --header:88px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--black);color:var(--ink);
+  font-family:"Helvetica Neue","Yu Gothic","YuGothic",Meiryo,sans-serif;
+  letter-spacing:.02em;
+}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+.noise{
+  position:fixed;inset:0;z-index:100;pointer-events:none;opacity:.12;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E")
+}
+.scanline{
+  position:fixed;inset:0;z-index:99;pointer-events:none;opacity:.045;
+  background:repeating-linear-gradient(0deg,transparent 0 3px,#000 4px)
+}
+header{
+  height:var(--header);position:fixed;z-index:80;inset:0 0 auto;
+  background:rgba(17,17,17,.96);backdrop-filter:blur(8px);
+  color:var(--white);border-bottom:1px solid var(--line-dark);
+  display:flex;align-items:center;padding:0 27px
+}
+.logo{font:23px Georgia,serif;letter-spacing:.08em;white-space:nowrap}
+.logo:before{content:"✦";font-size:11px;margin-right:10px;color:var(--accent)}
+.header-meta{
+  margin-left:auto;
+  text-align:right;
+  font-size:9px;
+  letter-spacing:.12em;
+  line-height:1.35;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-end;
+  color:#ffffff;
+}
+.header-meta > span:first-child,
+.header-meta > span:nth-child(2){opacity:.62}
+.header-meta strong{
+  margin-top:4px;
+  font-size:10px;
+  letter-spacing:.12em;
+  color:#ffffff;
+}
+.header-guide-note{
+  font-size:10px;
+  letter-spacing:.04em;
+  color:#ffffff;
+  opacity:1;
+}
+.page{
+  min-height:100vh;padding-top:var(--header);padding-bottom:86px;
+  background-image:
+    repeating-linear-gradient(0deg,transparent 0 31px,rgba(0,0,0,.018) 32px),
+    linear-gradient(90deg,rgba(255,255,255,.2),transparent 18%,transparent 82%,rgba(0,0,0,.035)),
+    url("bg.png");
+  background-repeat:repeat,no-repeat,no-repeat;
+  background-position:left top,left top,left top;
+  background-attachment:scroll,scroll,fixed;
+  background-size:auto,auto,auto 100vh;
+  background-color:var(--paper);
+}
+.wrap{width:min(1500px,94vw);margin:auto;padding:46px 0 70px}
+.guide-titlebar{
+  border:1px solid var(--line-light);
+  min-height:80px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:30px;
+  padding:18px 24px;
+  background: color-mix(in srgb, #1F1414 50%, transparent);
+  margin-bottom:28px
+}
+.guide-title-main{
+  font:400 22px Georgia,serif;
+  letter-spacing:.02em
+}
+.guide-title-meta{
+  margin-left:auto;
+  text-align:right;
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  color:#ffffff
+}
+.guide-title-meta strong{
+  font-size:11px;
+  letter-spacing:.12em
+}
+.guide-title-meta span{
+  font-size:13px;
+  line-height:1.5;
+  text-wrap:pretty;
+  line-break:strict
+}
+
+.hero{
+  border:1px solid var(--line-light);
+  display:grid;grid-template-columns:1.25fr .75fr;
+  min-height:360px;background:rgba(255,255,255,.16)
+}
+.hero-main{padding:48px 52px;display:flex;flex-direction:column;justify-content:flex-end}
+.eyebrow{font-size:9px;letter-spacing:.18em;color:var(--muted);margin-bottom:26px}
+.hero h1{font:400 clamp(42px,6vw,82px) Georgia,serif;letter-spacing:.035em;margin:0 0 18px;line-height:.96}
+.hero p{max-width:790px;margin:0;font-size:11px;line-height:1.9;color:#4f4a43;text-wrap:pretty;line-break:strict}
+.hero-side{border-left:1px solid var(--line-light);display:grid;grid-template-rows:1fr auto}
+.hero-code{display:flex;align-items:center;justify-content:center;writing-mode:vertical-rl;font-size:9px;letter-spacing:.22em;color:#756e63}
+.hero-note{border-top:1px solid var(--line-light);padding:22px;font-size:11px;line-height:1.8;color:#59544c;text-wrap:pretty;line-break:strict}
+
+.layout{display:block;margin-top:28px}
+.toc{
+  position:fixed;
+  top:calc(var(--header) + 74px);
+  left:max(3vw, calc((100vw - 1500px) / 2));
+  width:240px;
+  max-height:calc(100vh - var(--header) - 138px);
+  overflow-y:auto;
+  z-index:60;
+  border:1px solid var(--line-light);
+  background: color-mix(in srgb, #E9E4DC 55%, transparent);
+  backdrop-filter:blur(5px)
+}
+.toc-head{padding:16px 15px;border-bottom:1px solid var(--line-light);font-size:10px;letter-spacing:.16em;color:#6c665d}
+.toc a{
+  display:block;padding:12px 15px;border-bottom:1px solid rgba(20,20,20,.12);
+  letter-spacing:.09em;transition:.18s
+}
+.toc a strong{
+  display:block;
+  font-size:12px;
+  font-weight:700;
+  line-height:1.35;
+}
+.toc a small{
+  display:block;
+  margin-top:4px;
+  font-size:10px;
+  line-height:1.45;
+  color:#777066;
+  letter-spacing:.05em;
+}
+.toc a:last-child{border-bottom:0}
+.toc a:hover{background:#d9d2c6;padding-left:19px}
+
+.main{min-width:0;margin-left:268px}
+.flow{
+  border:1px solid var(--line-light);padding:22px;margin-bottom:28px;background:rgba(255,255,255,.14)
+}
+.flow-title{display:flex;justify-content:space-between;gap:20px;align-items:end;margin-bottom:18px}
+.flow-title h2{font:400 28px Georgia,serif;margin:0}
+.flow-title span{font-size:10px;letter-spacing:.14em;color:#70695f}
+.flow-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.flow-step.arrow-right::after{
+  content:"";
+  position:absolute;
+  top:19px;
+  right:-18px;
+  width:24px;
+  height:31px;
+  background:url("data:image/png;base64,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") center/contain no-repeat;
+  z-index:3;
+  pointer-events:none;
+}
+#s00 .section-head{grid-template-columns:1fr auto}
+#s00 .section-no{display:none}
+#s00 .section-title{padding-left:20px}
+
+.flow-step{
+  border:1px solid var(--line-light);padding:18px 15px;min-height:112px;position:relative;background:rgba(255,255,255,.12)
+}
+.flow-step b{font:400 25px Georgia,serif;display:block;margin-bottom:16px;color:#675f53}
+.flow-step strong{display:block;font-size:16px;letter-spacing:.08em;margin-bottom:7px}
+.flow-step small{font-size:13px;line-height:1.6;color:#5f594f}
+.warning-flow{
+  position:relative;
+}
+.warning-flow strong{
+  position:absolute;
+  top:63px;
+  left:15px;
+  margin:0;
+}
+.warning-flow small{
+  position:absolute;
+  top:91px;
+  left:15px;
+  margin:0;
+}
+
+
+.section{
+  scroll-margin-top:calc(var(--header) + 18px);
+  border:1px solid var(--line-light);margin-bottom:18px;background:rgba(255,255,255,.12)
+}
+.section-head{
+  display:grid;grid-template-columns:90px 1fr auto;align-items:center;
+  border-bottom:1px solid var(--line-light)
+}
+.section-no{
+  align-self:stretch;display:grid;place-items:center;border-right:1px solid var(--line-light);
+  font:400 28px Georgia,serif;color:#6f675c;padding:18px 8px
+}
+.section-title{padding:18px 21px}
+.section-title h2{font:400 26px Georgia,serif;margin:0 0 3px;letter-spacing:.025em}
+.section-title p{margin:0;font-size:14px;line-height:1.55;letter-spacing:.06em;color:#5f594f}
+.section-tag{padding:0 20px;font-size:10px;letter-spacing:.14em;color:#847c70}
+.section-body{padding:22px}
+.summary{
+  padding:16px 18px;border-left:3px solid #968872;background:rgba(255,255,255,.18);
+  font-size:13px;line-height:1.8;margin-bottom:18px
+}
+.steps{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.step{
+  border:1px solid rgba(20,20,20,.17);padding:17px 18px;min-height:132px;background:rgba(255,255,255,.1)
+}
+.step-top{display:flex;gap:12px;align-items:flex-start;margin-bottom:9px}
+.step-heading-wrap{min-width:0}
+.step-heading-wrap h3{margin:0}
+.step-heading-wrap small{
+  display:block;
+  margin-top:4px;
+  font-size:11px;
+  line-height:1.45;
+  color:#756f65;
+  font-weight:400;
+  letter-spacing:.03em;
+}
+.step-id{font:21px Georgia,serif;color:#827767}
+.step h3{font-size:14px;letter-spacing:.08em;margin:0}
+.step p{font-size:13px;line-height:1.7;margin:0;color:#4f4a43}
+.flow-unit{white-space:nowrap}
+.rule{
+  display:grid;grid-template-columns:140px 1fr;border-top:1px solid rgba(20,20,20,.14);font-size:13px
+}
+.rule:first-of-type{margin-top:18px}
+.rule b{padding:12px 14px;border-right:1px solid rgba(20,20,20,.14);font-size:11px;letter-spacing:.08em}
+.rule-major b{font-size:14px;letter-spacing:.06em}
+.rule span{padding:12px 14px;line-height:1.7}
+.placeholder{color:#867e71;font-style:italic}
+.summary,.step p,.rule span,.flow-step small,.section-title p{
+  text-wrap:pretty;
+  line-break:strict;
+}
+.site-footer{
+  position:fixed;
+  left:0;
+  right:0;
+  bottom:0;
+  z-index:80;
+  margin:0;
+  border-top:1px solid var(--line-dark);
+  padding:14px 24px 12px;
+  background:rgba(17,17,17,.96);
+  backdrop-filter:blur(8px);
+  color:var(--white);
+}
+.site-footer-copy{
+  font:400 18px Georgia,serif;
+  letter-spacing:.015em;
+  line-height:1.25;
+}
+.site-footer-note{
+  margin-top:6px;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:11px;
+  line-height:1.55;
+  letter-spacing:.01em;
+  color:rgba(238,232,221,.88);
+  text-wrap:pretty;
+}
+@media(max-width:1240px){
+  .hero{grid-template-columns:1fr}.hero-side{display:none}
+  .layout{display:block}
+  .toc{
+    position:static;
+    width:auto;
+    max-height:none;
+    overflow:visible;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    margin-bottom:28px;
+    backdrop-filter:none
+  }
+  .toc-head{grid-column:1/-1}
+  .main{margin-left:0}
+  .flow-grid{grid-template-columns:repeat(2,1fr)}
+  .flow-step.arrow-right::after{display:none}
+}
+@media(max-width:640px){
+  .guide-titlebar{align-items:flex-start;flex-direction:column;padding:18px}
+  .guide-title-meta{margin-left:0;text-align:left}
+  .page{padding-bottom:108px}
+  .site-footer{padding:10px 16px 9px}
+  .site-footer-copy{font-size:15px}
+  .site-footer-note{font-size:9px;line-height:1.4}
+
+  header{padding:0 18px}.header-meta{display:none}
+  .wrap{width:min(94vw,680px);padding-top:24px}
+  .hero-main{padding:34px 24px}
+  .flow-grid,.steps{grid-template-columns:1fr}
+  .toc{grid-template-columns:1fr}
+  .section-head{grid-template-columns:68px 1fr}.section-tag{display:none}
+  .section-title{padding:16px}.section-body{padding:16px}
+  .rule{grid-template-columns:1fr}.rule b{border-right:0;border-bottom:1px solid rgba(20,20,20,.12)}
+}
+</style>
+</head>
+<body>
+<div class="noise"></div>
+<div class="scanline"></div>
+
+<header>
+  <a class="logo" href="#top">YøRha CLIENT GUIDE</a>
+  <div class="header-meta">
+    <span>TRANSACTION MANUAL / CLIENT USE</span>
+    <span>FROM INQUIRY TO AFTER DELIVERY</span>
+    <span class="header-guide-note">お取引開始前に本ガイドをご確認ください。</span>
+  </div>
+</header>
+
+<main class="page" id="top">
+<div class="wrap">
+  <div class="layout">
+    <aside class="toc">
+      <div class="toc-head">GUIDE INDEX</div>
+      <a href="#s01"><strong>01 / INQUIRY</strong><small>お問い合わせ</small></a>
+      <a href="#s02"><strong>02 / ESTIMATE</strong><small>内容確認・見積</small></a>
+      <a href="#s03"><strong>03 / CONTRACT</strong><small>契約</small></a>
+      <a href="#s04"><strong>04 / PAYMENT</strong><small>お支払い</small></a>
+      <a href="#s05"><strong>05 / PREPARATION</strong><small>制作準備</small></a>
+      <a href="#s06"><strong>06 / PRODUCTION</strong><small>制作進行</small></a>
+      <a href="#s07"><strong>07 / DELIVERY</strong><small>納品</small></a>
+      <a href="#s08"><strong>08 / AFTER DELIVERY</strong><small>納品後</small></a>
+      <a href="#s09"><strong>09 / TRANSACTION END</strong><small>取引終了</small></a>
+      <a href="#swarn"><strong>⚠ / TROUBLE etc.</strong><small>トラブル・その他</small></a>
+    </aside>
+
+    <div class="main">
+
+      <section class="flow">
+        <div class="flow-title">
+          <h2>TRANSACTION FLOW</h2>
+          <span>OVERVIEW / 01—09 + ⚠</span>
+        </div>
+        <div class="flow-grid">
+          <a class="flow-step arrow-right" href="#s01"><b>01</b><strong>INQUIRY</strong><small>お問い合わせ・依頼内容提出</small></a>
+          <a class="flow-step arrow-right" href="#s02"><b>02</b><strong>ESTIMATE</strong><small>内容確認・見積・依頼検討</small></a>
+          <a class="flow-step arrow-right" href="#s03"><b>03</b><strong>CONTRACT</strong><small>契約内容確認・署名・締結</small></a>
+          <a class="flow-step" href="#s04"><b>04</b><strong>PAYMENT</strong><small>支払い・入金確認</small></a>
+          <a class="flow-step arrow-right" href="#s05"><b>05</b><strong>PREPARATION</strong><small>資料提出・仕様確定</small></a>
+          <a class="flow-step arrow-right" href="#s06"><b>06</b><strong>PRODUCTION</strong><small>制作進行・途中確認・完成確認</small></a>
+          <a class="flow-step arrow-right" href="#s07"><b>07</b><strong>DELIVERY</strong><small>データ納品・確認</small></a>
+          <a class="flow-step" href="#s08"><b>08</b><strong>AFTER DELIVERY</strong><small>納品後</small></a>
+          <a class="flow-step arrow-right" href="#s09"><b>09</b><strong>TRANSACTION END</strong><small>取引終了</small></a>
+          <a class="flow-step warning-flow" href="#swarn"><b>⚠</b><strong>CANCELLATION / TROUBLE</strong><small>キャンセル・進行トラブル</small></a>
+        </div>
+      </section>
+
+      <section class="section" id="s00">
+<div class="section-head"><div class="section-title"><h2>GUIDE</h2><p>このガイドの使い方</p></div><div class="section-tag">START HERE</div></div>
+<div class="section-body"><div class="summary">取引全体の流れ、各工程でYøRhaと依頼者が行うこと、確認事項、完了条件など、<br>お取引中の共通説明はこちらにまとめてあります。<br><br>お取引開始前に、当ページの全項目をご確認ください。<br>こちらにない個別事項やご不明点については、メッセージ等でお尋ねください。<br>個別に対応いたします。</div></div>
+</section>
+
+<section class="section" id="s01">
+<div class="section-head"><div class="section-no">01</div><div class="section-title"><h2>INQUIRY</h2><p>お問い合わせ</p></div><div class="section-tag">CONTACT</div></div>
+<div class="section-body"><div class="summary">制作内容・用途・予算・希望納期など、依頼可否を確認するために必要な情報をご提出ください。</div>
+<div class="steps">
+<div class="step"><div class="step-top"><span class="step-id">01-1</span><h3>依頼内容の提出</h3></div><p>正式な回答にあたり、必要な情報があります。<br>お問い合わせ時点でわかる範囲で構いませんので、各項目の情報を添えてお問い合わせください。</p></div>
+<div class="step"><div class="step-top"><span class="step-id">INFO</span><h3>お問い合わせ時の必要情報</h3></div><p>✦ 制作内容（書き込み量が推し量れる程度）：<br>✦ 用途：<br>✦ 商用利用有無：<br>✦ 予算感：<br>✦ 希望納期：<br>✦ 資料添付：<br>✦ その他：</p></div>
+</div>
+<div class="rule"><b>依頼者</b><span>必要情報・資料を添えて問合せ送信</span></div><div class="rule"><b>YøRha</b><span>内容確認・不足情報確認・受注可否判断</span></div><div class="rule"><b>正式回答</b><span>必要情報が揃い次第、正式に回答いたします。</span></div></div>
+</section>
+
+<section class="section" id="s02">
+<div class="section-head"><div class="section-no">02</div><div class="section-title"><h2>ESTIMATE</h2><p>内容確認・お見積り</p></div><div class="section-tag">QUOTE</div></div>
+<div class="section-body"><div class="summary">いただいた依頼内容をもとに、制作可否・料金・スケジュール・条件などを確認します。</div>
+<div class="steps">
+<div class="step"><div class="step-top"><span class="step-id">02-1</span><h3>仕様整理</h3></div><p>いただいた情報をもとに、受注可能か整理・判断します。</p></div>
+<div class="step"><div class="step-top"><span class="step-id">02-2</span><h3>見積提示</h3></div><p>料金、スケジュール、納期、条件など、依頼に必要な内容をご案内します。</p></div>
+<div class="step"><div class="step-top"><span class="step-id">02-3</span><h3>ご依頼検討</h3></div><p>見積内容をご検討ください。<br>正式にご依頼いただく場合は、その旨をお知らせください。<br>ご依頼に至らない場合も必ずご連絡ください。</p></div>
+</div></div>
+</section>
+
+<section class="section" id="s03">
+<div class="section-head"><div class="section-no">03</div><div class="section-title"><h2>CONTRACT</h2><p>契約</p></div><div class="section-tag">AGREEMENT</div></div>
+<div class="section-body"><div class="summary">ご依頼いただく際は、制作内容に応じた契約を締結します。</div>
+<div class="steps">
+<div class="step"><div class="step-top"><span class="step-id">03-1</span><h3>契約書送付</h3></div><p>ご依頼確定後、制作内容に応じて「イラスト制作業務委託契約書」または「モデル制作業務委託契約書」を、ご指定のメールアドレス宛にお届けします。</p></div>
+<div class="step"><div class="step-top"><span class="step-id">03-2</span><h3>契約内容確認・署名</h3></div><p>契約内容をすべてご確認のうえ、問題がなければ署名・返送してください。不明点がある場合は、署名・返送前に必ずご確認ください。</p></div>
+<div class="step"><div class="step-top"><span class="step-id">03-3</span><h3>契約締結</h3></div><p>署名済みの制作業務委託契約書が返送され、当方へ届き次第、契約締結完了となります。</p></div>
+</div></div>
+</section>
+
+<section class="section" id="s04">
+<div class="section-head"><div class="section-no">04</div><div class="section-title"><h2>PAYMENT</h2><p>お支払い</p></div><div class="section-tag"></div></div>
+<div class="section-body"><div class="summary">制作費は原則前金制です。<br><br>契約締結後、制作費をお支払いください。入金確認後に、正式に制作スケジュールを確保します。<br>また、具体的なデザイン提案や方向性の打ち合わせ・ご相談は制作工程に含まれるため、ご入金確認後から対応可能です。</div>
+<div class="steps">
+<div class="step"><div class="step-top"><span class="step-id">04-1</span><h3>支払い方法</h3></div><p>銀行振込、またはクレジットカード（分割払い含）・Apple Pay・PayPay・Linkの中から、希望のお支払い方法をお知らせください。<br>※PayPayについて：当方は承認を受けていますので規約違反には該当しません。</p></div>
+<div class="step"><div class="step-top"><span class="step-id">04-2</span><h3>支払い手続き</h3></div><p><strong>銀行振込：</strong> 振込先情報をご案内します。<br><strong>オンライン決済：</strong> 専用の決済リンクを個別にご案内します。</p></div>
+<div class="step"><div class="step-top"><span class="step-id">04-3</span><h3>入金確認</h3></div><p>着金確認後、正式に制作スケジュールを確保します。<br>オンライン決済の場合システムの都合上、確認までに数日を要します。</p></div>
+<div class="step"><div class="step-top"><span class="step-id">04-4</span><h3>制作案内</h3></div><p>当初ご案内済みの制作開始時期までお待ちください。<br>スケジュールに変更がある場合や制作開始時には、改めてご連絡いたします。</p></div>
+</div><div class="rule"><b>注意</b><span>お支払い時の手数料等は、ご依頼者様の負担となります。</span></div></div>
+</section>
+
+<section class="section" id="s05">
+<div class="section-head"><div class="section-no">05</div><div class="section-title"><h2>PREPARATION</h2><p>制作準備</p></div><div class="section-tag">SETUP</div></div>
+<div class="section-body"><div class="summary">制作開始前に、資料・仕様・連絡方法・制作条件を整理します。</div>
+<div class="steps">
+<div class="step"><div class="step-top"><span class="step-id">05-1</span><h3>資料提出・ヒアリング</h3></div><p><strong>A ✦ モデル制作：</strong><br>専用スプレッドシートに必要な設定資料・参考画像・テキスト情報等をご入力のうえ、共有してください。ご希望の場合は、お取引用の専用Discordサーバーをご用意いたします。<br><br><strong>B ✦ モデル以外の制作：</strong><br>設定資料、参考画像、テキスト情報、デザイン希望や用途など、必要な表現についてお知らせください。</p></div>
+<div class="step"><div class="step-top"><span class="step-id">05-2</span><h3>仕様確定</h3></div><p>制作開始後の仕様変更などが発生しないよう最終確認を行います。<br>基本的に、着手後の描写仕様変更や追加等はお受けしていません。</p></div>
+</div></div>
+</section>
+
+<section class="section" id="s06">
+<div class="section-head"><div class="section-no">06</div><div class="section-title"><h2>PRODUCTION</h2><p>制作進行</p></div><div class="section-tag">WORKFLOW</div></div>
+<div class="section-body"><div class="summary">案件ごとの制作工程に沿って制作・確認を進めます。</div>
+<div class="steps">
+<div class="step"><div class="step-top"><span class="step-id">06-1</span><h3>制作開始</h3></div><p>制作着手時に、改めてご連絡いたします。</p></div>
+<div class="step"><div class="step-top"><span class="step-id">06-2</span><div class="step-heading-wrap"><h3>制作工程</h3><small>（イラストとLive2Dでは工程が異なります）</small></div></div><p><strong>A ✦ ILLUSTRATION</strong><br>　構図ラフ or カラーラフ <span class="flow-unit">→確認</span> <span class="flow-unit">→清書</span> <span class="flow-unit">→確認</span> <span class="flow-unit"><span class="flow-unit">→完成</span>納品</span><br><br><strong>B ✦ Live2D MODEL</strong><br><strong>① 立ち絵制作</strong>　構図ラフorカラーラフ <span class="flow-unit">→確認</span> <span class="flow-unit">→清書</span> <span class="flow-unit">→確認</span> <span class="flow-unit">→完成</span> <span class="flow-unit">→立ち絵納品</span><br><strong>② 立ち絵パーツ分け</strong><br><strong>③ モデリング</strong>　着手 <span class="flow-unit">→完成</span> <span class="flow-unit">→動作録画動画にて動作確認</span> <span class="flow-unit">→完成</span> <span class="flow-unit">→Live2Dモデル納品</span> <span class="flow-unit">→全工程完了</span></p></div>
+</div>
+<div class="rule rule-major"><b>✦ 確認工程</b><span>YøRhaから確認物を提出 → 依頼者が確認 → 必要に応じて修正 → 工程確定 → 次工程へ</span></div>
+<div class="rule rule-major"><b>✦ 修正</b><span>・各工程につき、修正回数は原則2回以内です。<br>・ご要望はできるだけまとめてお伝えください。<br>・修正内容は、希望する仕上がりが分かるよう具体的にお伝えください。<br>・小出しおよび後出しでのご要望はお控えください。<br>・後戻り修正は原則お受けしておりません。必要な場合は、追加料金にてご相談となります。</span></div></div>
+</section>
+
+<section class="section" id="s07">
+<div class="section-head"><div class="section-no">07</div><div class="section-title"><h2>DELIVERY</h2><p>納品</p></div><div class="section-tag">FILE DELIVERY</div></div>
+<div class="section-body"><div class="summary">案件で合意した形式・内容の納品データをお渡しします。</div>
+<div class="steps">
+<div class="step"><div class="step-top"><span class="step-id">07-1</span><h3>納品データ作成</h3></div><p>最終データを整理し、納品形式へ書き出します。</p></div>
+<div class="step"><div class="step-top"><span class="step-id">07-2</span><h3>データ送付</h3></div><p>指定の方法で納品データをお渡しします。</p></div>
+</div>
+<div class="rule"><b>納品形式</b><span>案件ごとの契約・見積・仕様に基づきます。</span></div>
+<div class="rule"><b>編集データ</b><span>PSD / cmo3等は納品対象外です。</span></div>
+<div class="rule"><b>著作権</b><span>著作権の譲渡は行っておりません。利用許諾（利用ライセンスの付与）となります。</span></div></div>
+</section>
+
+<section class="section" id="s08">
+<div class="section-head"><div class="section-no">08</div><div class="section-title"><h2>AFTER DELIVERY</h2><p>納品後</p></div><div class="section-tag">POST DELIVERY</div></div>
+<div class="section-body"><div class="summary">納品後の不具合等について。</div>
+<div class="steps">
+<div class="step"><div class="step-top"><span class="step-id">08-1</span><h3>納品データ確認</h3></div><p>データ不備や不足がないか、納品内容はお早めにご確認ください。</p></div>
+<div class="step"><div class="step-top"><span class="step-id">08-2</span><h3>不具合連絡</h3></div><p>作者側の不備と思われる問題がある場合は、内容が分かる状態でご連絡ください。<br>お申し出の有効期間は、納品日から起算し30日間とします。<br>有効期間以降は当方不備の場合でも対応いたしかねます。</p></div>
+</div></div>
+</section>
+
+<section class="section" id="s09">
+<div class="section-head"><div class="section-no">09</div><div class="section-title"><h2>TRANSACTION END</h2><p>取引終了</p></div><div class="section-tag">CLOSE</div></div>
+<div class="section-body"><div class="summary">納品・受領確認後の取引終了と、その後の利用・権利関係・お問い合わせについて。</div>
+<div class="steps">
+<div class="step"><div class="step-top"><span class="step-id">09-1</span><h3>取引完了</h3></div><p>必要な納品と確認が完了した時点で、制作取引を完了とします。</p></div>
+<div class="step"><div class="step-top"><span class="step-id">09-2</span><h3>取引後の利用</h3></div><p>取引終了後も、契約・利用規約に基づき、利用条件や禁止事項などは継続します。</p></div>
+<div class="step"><div class="step-top"><span class="step-id">09-3</span><h3>再依頼</h3></div><p>追加制作や新規案件は、改めてご相談ください。</p></div>
+</div></div>
+</section>
+
+<section class="section" id="swarn">
+<div class="section-head"><div class="section-no warning-no">⚠</div><div class="section-title"><h2>CANCELLATION / TROUBLE</h2><p>キャンセル・進行トラブル</p></div><div class="section-tag">EXCEPTION</div></div>
+<div class="section-body"><div class="summary">キャンセル・返金・取引上のトラブル等の対応については、契約書にそれぞれ記載されています。必ずご確認ください。</div></div>
+</section>
+
+<footer class="site-footer">
+  <div class="site-footer-copy">© YøRha. All rights reserved.</div>
+  <div class="site-footer-note">False claims of authorship, unauthorized reproduction or redistribution, and use for AI training are strictly prohibited.</div>
+</footer>
+    </div>
+  </div>
+</div>
+</main>
+</body>
+</html>
